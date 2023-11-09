@@ -58,8 +58,7 @@ namespace project
 
         private void 로그인ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // 이것저것
-            //관리자명단ToolStripMenuItem.Visible = false;
+            관리자명단ToolStripMenuItem.Visible = false;
         }
     }
 }
