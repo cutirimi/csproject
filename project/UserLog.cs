@@ -19,5 +19,11 @@ namespace project
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UserAdd add= new UserAdd();
+            add.Show();
+        }
     }
 }

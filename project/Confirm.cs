@@ -16,5 +16,10 @@ namespace project
         {
             InitializeComponent();
         }
+
+        private void Confirm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
