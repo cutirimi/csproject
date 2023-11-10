@@ -43,10 +43,10 @@ namespace project
         private void 자판기2ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Machine machine2 = new Machine();
-            Form2 fm2 = new Form2();
+            Form3 fm3 = new Form3();
             machine2.name = "자판기2"; ;
-            fm2.Text = machine2.name;
-            fm2.Show();
+            fm3.Text = machine2.name;
+            fm3.Show();
         }
 
         private void 로그인ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace project
         {
             UserLog login = new UserLog();
             login.Show();
-            //관리자명단ToolStripMenuItem.Visible = false;
+            관리자명단ToolStripMenuItem.Visible = false;
         }
     }
 }

@@ -8,47 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
+using project;
 
 namespace project
 {
     public partial class Form2 : Form
     {
-        abstract class Machine        //자판기 클래스
-        {
-            static string name;        //자판기 이름
-            public string[] drink;     //음료
-            public string[] price;     //음료 가격
-            abstract public string Drinkinfo();     //자판기 음료와 가격 리턴
-        }
-        class Machine1 : Machine
-        {
-            string name;
-            public Machine1() { name = "자판기1"; }
-            public override string Drinkinfo()
-            {
-                string[] drink = { "코카콜라", "펩시", "갈아만든배", "오렌지주스", "포도주스", "생수", "토레타", "포카리", "옥수수수염차" };
-                string [] price = { "1800", "1500", "1000", "800", "800", "1000", "2000", "1200", "2000" };
-                return Drinkinfo();
-            }
-        }
-        class Machine2 : Machine
-        {
-            string name;
-            public Machine2() { name = "자판기2"; }
-            public override string Drinkinfo()
-            {
-                //사이다, 봉봉, 사과주스, 초코에몽으로 수정
-                string[] drink = { "사이다", "펩시", "봉봉", "사과주스", "포도주스", "생수", "토레타", "초코에몽", "옥수수수염차" };
-                string[] price = { "1200", "1500", "800", "800", "800", "1000", "2000", "1000", "2000" };
-                return Drinkinfo();
-            }
-        }
-
         Machine1 machine1 = new Machine1();
-        Machine2 machine2 = new Machine2();
-
-        static int cnt = 0;
-        static int count= 0;
 
         public Form2()
         {
@@ -59,6 +25,9 @@ namespace project
         private void Form2_Load(object sender, EventArgs e)
         {
             button10.Visible = false;
+
+            label3.Text = machine1.drink[machine1.index];
+            label12.Text = machine1.Pricest(machine1.index);
         }
 
         private void button1_Click(object sender, EventArgs e)
