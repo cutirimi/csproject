@@ -19,78 +19,84 @@ namespace project
         public Form2()
         {
             InitializeComponent();
-            
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             button10.Visible = false;
 
-            label3.Text = machine1.drink[machine1.index];
-            label12.Text = machine1.Pricest(machine1.index);
+            txtdrink1.Text = machine1.drink[0];
+            txtprice1.Text = machine1.price[0];
+            txtdrink2.Text = machine1.drink[1];
+            txtprice2.Text = machine1.price[1];
+            txtdrink3.Text = machine1.drink[2];
+            txtprice3.Text = machine1.price[2];
+            txtdrink4.Text = machine1.drink[3];
+            txtprice4.Text = machine1.price[3];
+            txtdrink5.Text = machine1.drink[4];
+            txtprice5.Text = machine1.price[4];
+            txtdrink6.Text = machine1.drink[5];
+            txtprice6.Text = machine1.price[5];
+            txtdrink7.Text = machine1.drink[6];
+            txtprice7.Text = machine1.price[6];
+            txtdrink8.Text = machine1.drink[7];
+            txtprice8.Text = machine1.price[7];
+            txtdrink9.Text = machine1.drink[8];
+            txtprice9.Text = machine1.price[8];
+        }
+        protected void selectedindex(int index)
+        {
+            if(index>=0&&index<machine1.drink.Count)
+            {
+                txtdrinkselect.Text = machine1.drink[index];
+                txtpriceselect.Text = machine1.price[index];
+            }
+            button10.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = label3.Text;
-            label21.Text = label12.Text;
-            button10.Visible = true;
+            selectedindex(0);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            label1.Text = label4.Text;
-            label21.Text = label13.Text;
-            button10.Visible = true;
+            selectedindex(1);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            label1.Text = label5.Text;
-            label21.Text = label14.Text;
-            button10.Visible = true;
+            selectedindex(2);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            label1.Text = label6.Text;
-            label21.Text = label15.Text;
-            button10.Visible = true;
+            selectedindex(3);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            label1.Text = label7.Text;
-            label21.Text = label16.Text;
-            button10.Visible = true;
+            selectedindex(4);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            label1.Text = label8.Text;
-            label21.Text = label17.Text;
-            button10.Visible = true;
+            selectedindex(5);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            label1.Text = label9.Text;
-            label21.Text = label18.Text;
-            button10.Visible = true;
+            selectedindex(6);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            label1.Text = label10.Text;
-            label21.Text = label19.Text;
-            button10.Visible = true;
+            selectedindex(7);
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            label1.Text = label11.Text;
-            label21.Text = label20.Text;
-            button10.Visible = true;
+            selectedindex(8);
         }
 
         private void button10_Click(object sender, EventArgs e)

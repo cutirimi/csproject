@@ -3,49 +3,92 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace project
 {
     public abstract class Machine
     {
-        public abstract void Drinkinfo(int index);
-        public abstract string Pricest(int index);
+        public string Name { get; set; }     //자판기 이름 프로퍼티
+        public List<string> drink;      //음료 품목 -> 동적
+        public List<string> price;      //음료 가격
+        int index = 0;      //품목 개수
+        public abstract void AddDrink(string drinkName, string price, int index);       //음료 추가
+        public abstract void RemoveDrink(int index);        //음료 삭제
     }
 
     class Machine1 : Machine
     {
-        public string name;        //자판기 이름
-        public string[] drink;     //음료
-        public string[] price;     //음료 가격
-        public int index = 0;
-        public Machine1() { name = "자판기1"; Drinkinfo(index); }
-        public override void Drinkinfo(int index)
+        public Machine1()
         {
-            this.drink = new string[] { "코카콜라", "펩시", "갈아만든배", "오렌지주스", "포도주스", "생수", "토레타", "포카리", "옥수수수염차" };
-            this.price = new string[] { "1800", "1800", "1000", "800", "800", "1000", "2000", "1200", "2000" };
+            Name = "자판기1";
+            drink = new List<string>() { "코카콜라", "펩시", "갈아만든배", "오렌지주스", "포도주스", "생수", "토레타", "포카리", "옥수수수염차"};
+            price = new List<string>() { "1800원", "1800원", "1000원", "800원", "800원", "1000원", "2000원", "1200원", "2000원"};
         }
-        public override string Pricest(int index)
+
+        override public void AddDrink(string drinkName, string drinkPrice, int index)       //음료 추가 AddDrink메소드
         {
-            return price[index] + "원";
+            if(index<9)
+            {
+                drink.Add(drinkName);
+                price.Add(drinkPrice);
+            }
+            else
+            {
+                MessageBox.Show("음료 추가 불가능");
+            }
+        }
+
+        override public void RemoveDrink(int index)     //음료 삭제 RemoveDrink메소드
+        {
+            if (index >= 0 && index < 9)
+            {
+                drink.RemoveAt(index);
+                price.RemoveAt(index);
+            }
+            else
+            {
+                MessageBox.Show("음료 품목 삭제 불가능");
+            }
         }
     }
 
+
     class Machine2 : Machine
     {
-        public string name;        //자판기 이름
-        public string[] drink;     //음료
-        public string[] price;     //음료 가격
-        public int index = 0;
-        public Machine2() { name = "자판기2"; Drinkinfo(index); }
-        public override void Drinkinfo(int index)
+        public Machine2()
         {
-            //사이다, 봉봉, 사과주스, 초코에몽으로 수정
-            this.drink = new string[] { "사이다", "펩시", "봉봉", "사과주스", "포도주스", "생수", "토레타", "초코에몽", "옥수수수염차" };
-            this.price = new string[] { "1200", "1800", "1000", "800", "800", "1000", "2000", "1200", "2000" };
+            Name = "자판기2";
+            drink = new List<string>();
+            price = new List<string>();
+            drink = new List<string>() { "사이다", "펩시", "봉봉", "사과주스", "포도주스", "생수", "토레타", "초코에몽", "옥수수수염차" };
+            price = new List<string>() { "1200원", "1800원", "800원", "800원", "800원", "1000원", "2000원", "1200원", "2000원" };
         }
-        public override string Pricest(int index)
+
+        override public void AddDrink(string drinkName, string drinkPrice, int index)       //음료 추가 AddDrink메소드
         {
-            return price[index] + "원";
+            if (index < 9)
+            {
+                drink.Add(drinkName);
+                price.Add(drinkPrice);
+            }
+            else
+            {
+                MessageBox.Show("음료 추가 불가능");
+            }
+        }
+
+        override public void RemoveDrink(int index)     //음료 삭제 RemoveDrink메소드
+        {
+            if (index >= 0 && index < 9)
+            {
+                drink.RemoveAt(index);
+                price.RemoveAt(index);
+            }
+            else
+            {
+                MessageBox.Show("음료 품목 삭제 불가능");
+            }
         }
     }
 }
