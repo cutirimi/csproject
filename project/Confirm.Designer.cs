@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.deletebtn = new System.Windows.Forms.Button();
             this.addbtn = new System.Windows.Forms.Button();
             this.drinklist = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.adddrink = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -59,6 +61,30 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "품목명";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 90;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "가격";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 90;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "재고수량";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader5.Width = 90;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "상태";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 90;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -77,30 +103,6 @@
             this.label2.Size = new System.Drawing.Size(163, 33);
             this.label2.TabIndex = 5;
             this.label2.Text = "님 페이지";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "품목명";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "가격";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 100;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "재고수량";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 100;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "상태";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 100;
             // 
             // deletebtn
             // 
@@ -126,17 +128,24 @@
             // 
             this.drinklist.FormattingEnabled = true;
             this.drinklist.ItemHeight = 15;
-            this.drinklist.Location = new System.Drawing.Point(41, 374);
+            this.drinklist.Location = new System.Drawing.Point(44, 374);
             this.drinklist.Name = "drinklist";
-            this.drinklist.Size = new System.Drawing.Size(211, 139);
+            this.drinklist.Size = new System.Drawing.Size(208, 139);
             this.drinklist.TabIndex = 8;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // adddrink
             // 
-            this.adddrink.Location = new System.Drawing.Point(41, 329);
+            this.adddrink.Location = new System.Drawing.Point(44, 329);
             this.adddrink.Name = "adddrink";
-            this.adddrink.Size = new System.Drawing.Size(211, 25);
-            this.adddrink.TabIndex = 7;
+            this.adddrink.Size = new System.Drawing.Size(208, 25);
+            this.adddrink.TabIndex = 12;
+            this.adddrink.TextChanged += new System.EventHandler(this.adddrink_TextChanged_1);
             // 
             // Confirm
             // 
@@ -144,10 +153,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(482, 552);
+            this.Controls.Add(this.adddrink);
             this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.addbtn);
             this.Controls.Add(this.drinklist);
-            this.Controls.Add(this.adddrink);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
@@ -173,6 +182,7 @@
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Button addbtn;
         private System.Windows.Forms.ListBox drinklist;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox adddrink;
     }
 }

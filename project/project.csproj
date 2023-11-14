@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChoiceDrink.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChoiceDrink.Designer.cs">
-      <DependentUpon>ChoiceDrink.cs</DependentUpon>
-    </Compile>
     <Compile Include="Confirm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,9 +99,6 @@
     <Compile Include="UserLog.Designer.cs">
       <DependentUpon>UserLog.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ChoiceDrink.resx">
-      <DependentUpon>ChoiceDrink.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Confirm.resx">
       <DependentUpon>Confirm.cs</DependentUpon>
     </EmbeddedResource>

@@ -15,8 +15,6 @@ namespace project
         public Confirm()
         {
             InitializeComponent();
-
-            
         }
 
         private void Confirm_Load(object sender, EventArgs e)
@@ -39,6 +37,16 @@ namespace project
             {
                 drinklist.Items.RemoveAt(drinklist.SelectedIndex);
             }
+        }
+
+        private void adddrink_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adddrink_TextChanged_1(object sender, EventArgs e)
+        {
+            drinklist.Items.Add(adddrink);
         }
     }
 }
