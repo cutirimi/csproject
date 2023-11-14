@@ -16,7 +16,7 @@ namespace project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new UserLog());     //Form1이 항상 기본 실행
 
         }
     }
