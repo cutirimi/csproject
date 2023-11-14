@@ -26,6 +26,14 @@ namespace project
 
         }
 
+        public string UpdateUser()
+        {
+            UserAdd ua = new UserAdd();
+            string updatename;
+            updatename = ua.nametb.Text;
+            return updatename;
+        }
+
         private void UserAdd_Load(object sender, EventArgs e)
         {
 

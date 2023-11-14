@@ -29,83 +29,126 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.deletebtn = new System.Windows.Forms.Button();
+            this.addbtn = new System.Windows.Forms.Button();
+            this.drinklist = new System.Windows.Forms.ListBox();
+            this.adddrink = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listView1
             // 
             this.listView1.AutoArrange = false;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(28, 87);
+            this.listView1.Location = new System.Drawing.Point(44, 122);
             this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(364, 330);
+            this.listView1.Size = new System.Drawing.Size(400, 163);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "이름";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "누적액";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 250;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "확인";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(23, 37);
+            this.label1.Location = new System.Drawing.Point(26, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 27);
+            this.label1.Size = new System.Drawing.Size(0, 33);
             this.label1.TabIndex = 4;
-            this.label1.Text = "관리자 명단";
             // 
-            // button1
+            // label2
             // 
-            this.button1.Location = new System.Drawing.Point(339, 118);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 22);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "보기";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(158, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 33);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "님 페이지";
             // 
-            // button2
+            // columnHeader3
             // 
-            this.button2.Location = new System.Drawing.Point(339, 146);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 22);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "보기";
-            this.button2.UseVisualStyleBackColor = true;
+            this.columnHeader3.Text = "품목명";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "가격";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "재고수량";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader5.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "상태";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 100;
+            // 
+            // deletebtn
+            // 
+            this.deletebtn.Location = new System.Drawing.Point(322, 396);
+            this.deletebtn.Name = "deletebtn";
+            this.deletebtn.Size = new System.Drawing.Size(122, 44);
+            this.deletebtn.TabIndex = 10;
+            this.deletebtn.Text = "삭제";
+            this.deletebtn.UseVisualStyleBackColor = true;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
+            // 
+            // addbtn
+            // 
+            this.addbtn.Location = new System.Drawing.Point(322, 329);
+            this.addbtn.Name = "addbtn";
+            this.addbtn.Size = new System.Drawing.Size(122, 44);
+            this.addbtn.TabIndex = 9;
+            this.addbtn.Text = "추가";
+            this.addbtn.UseVisualStyleBackColor = true;
+            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
+            // 
+            // drinklist
+            // 
+            this.drinklist.FormattingEnabled = true;
+            this.drinklist.ItemHeight = 15;
+            this.drinklist.Location = new System.Drawing.Point(41, 374);
+            this.drinklist.Name = "drinklist";
+            this.drinklist.Size = new System.Drawing.Size(211, 139);
+            this.drinklist.TabIndex = 8;
+            // 
+            // adddrink
+            // 
+            this.adddrink.Location = new System.Drawing.Point(41, 329);
+            this.adddrink.Name = "adddrink";
+            this.adddrink.Size = new System.Drawing.Size(211, 25);
+            this.adddrink.TabIndex = 7;
             // 
             // Confirm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-            this.ClientSize = new System.Drawing.Size(422, 442);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(482, 552);
+            this.Controls.Add(this.deletebtn);
+            this.Controls.Add(this.addbtn);
+            this.Controls.Add(this.drinklist);
+            this.Controls.Add(this.adddrink);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
             this.Enabled = false;
@@ -122,10 +165,14 @@
 
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button deletebtn;
+        private System.Windows.Forms.Button addbtn;
+        private System.Windows.Forms.ListBox drinklist;
+        private System.Windows.Forms.TextBox adddrink;
     }
 }

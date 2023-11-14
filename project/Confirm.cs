@@ -15,11 +15,30 @@ namespace project
         public Confirm()
         {
             InitializeComponent();
+
+            
         }
 
         private void Confirm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+            if (adddrink.Text != "")
+            {
+                drinklist.Items.Add(adddrink.Text);
+                adddrink.Text = "";
+            }
+        }
+
+        private void deletebtn_Click(object sender, EventArgs e)
+        {
+            if (drinklist.SelectedIndex > -1)
+            {
+                drinklist.Items.RemoveAt(drinklist.SelectedIndex);
+            }
         }
     }
 }
