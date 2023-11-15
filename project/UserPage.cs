@@ -12,18 +12,22 @@ namespace project
 {
     public partial class UserPage : Form
     {
-        LoginClass log=new LoginClass();
+        UserAdd ua = new UserAdd();
 
         public UserPage()
         {
-            InitializeComponent();
-            label1.Text = log.Name;
+            InitializeComponent();  
         }
 
         private void modifybtn_Click(object sender, EventArgs e)
         {
             Modify modify = new Modify();
             modify.Show();
+        }
+
+        private void UserPage_Load(object sender, EventArgs e)
+        {
+            label1.Text = LoginClass.Name;
         }
     }
 }

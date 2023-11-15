@@ -51,8 +51,8 @@ namespace project
 
         private void 로그인ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            LoginMainForm logfm = new LoginMainForm();
-            logfm.Show();
+            UserLog ul = new UserLog();
+            ul.Show();
         }
 
         private void 관리ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -70,7 +70,6 @@ namespace project
         {
             UserLog login = new UserLog();
             login.Show();
-            관리자명단ToolStripMenuItem.Visible = false;
         }
     }
 }

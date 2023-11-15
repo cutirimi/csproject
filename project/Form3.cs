@@ -102,6 +102,7 @@ namespace project
         private void button10_Click(object sender, EventArgs e)
         {
             MessageBox.Show("정상 구매");
+            this.Close();
         }
     }
 }

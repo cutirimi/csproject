@@ -10,7 +10,6 @@ namespace project
 {
     public partial class UserLog : Form
     {
-        LoginClass log=new LoginClass();
         UserAdd add = new UserAdd();
         UserPage page = new UserPage();
 
@@ -32,26 +31,13 @@ namespace project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool match = true;
-
-            for (int i = 0; i < 2; i++)
+            if (lognametb.Text == LoginClass.Name && logpwtb.Text == LoginClass.Password)
             {
-                if (lognametb.Text== log.Name/*add.getName()*/ && logpwtb.Text== log.Password/*add.getPassword()*/)
-                {
-                    match = true;
-                }
-                else
-                {
-                    match = false;
-                }
-            }
-            if(match==true)
-            {
-                MessageBox.Show(log.Name/*add.getName()*/ + "님 환영합니다.");
+                MessageBox.Show(LoginClass.Name + "님 환영합니다.");
                 this.Hide();
                 page.Show();
             }
-            else if(match==false)
+            else
             {
                 MessageBox.Show("아이디 혹은 비밀번호가 일치하지않습니다.\n 다시 입력해주세요.");
             }

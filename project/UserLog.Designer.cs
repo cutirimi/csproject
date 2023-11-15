@@ -104,6 +104,8 @@
             // 
             // UserLog
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(482, 553);
             this.Controls.Add(this.button2);

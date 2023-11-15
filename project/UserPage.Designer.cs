@@ -42,19 +42,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(50, 35);
+            this.label1.Location = new System.Drawing.Point(57, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 19);
+            this.label1.Size = new System.Drawing.Size(0, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(111, 35);
+            this.label2.Location = new System.Drawing.Point(127, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 19);
+            this.label2.Size = new System.Drawing.Size(119, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "님 페이지";
             // 
@@ -67,9 +66,10 @@
             this.columnHeader5});
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(42, 133);
+            this.listView1.Location = new System.Drawing.Point(35, 125);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(400, 294);
+            this.listView1.Size = new System.Drawing.Size(400, 300);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -100,9 +100,10 @@
             // modifybtn
             // 
             this.modifybtn.BackColor = System.Drawing.SystemColors.Window;
-            this.modifybtn.Location = new System.Drawing.Point(42, 462);
+            this.modifybtn.Location = new System.Drawing.Point(35, 449);
+            this.modifybtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.modifybtn.Name = "modifybtn";
-            this.modifybtn.Size = new System.Drawing.Size(399, 50);
+            this.modifybtn.Size = new System.Drawing.Size(400, 60);
             this.modifybtn.TabIndex = 3;
             this.modifybtn.Text = "수정";
             this.modifybtn.UseVisualStyleBackColor = false;
@@ -110,16 +111,18 @@
             // 
             // UserPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-            this.ClientSize = new System.Drawing.Size(484, 561);
+            this.ClientSize = new System.Drawing.Size(482, 553);
             this.Controls.Add(this.modifybtn);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UserPage";
             this.Text = "UserPage";
+            this.Load += new System.EventHandler(this.UserPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
