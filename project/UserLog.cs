@@ -10,7 +10,9 @@ namespace project
 {
     public partial class UserLog : Form
     {
+        LoginClass log=new LoginClass();
         UserAdd add = new UserAdd();
+        UserPage page = new UserPage();
 
         public UserLog()
         {
@@ -30,11 +32,11 @@ namespace project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Confirm cf = new Confirm();
             bool match = true;
+
             for (int i = 0; i < 2; i++)
             {
-                if (lognametb.Text== add.getName() && logpwtb.Text== add.getPassword())
+                if (lognametb.Text== log.Name/*add.getName()*/ && logpwtb.Text== log.Password/*add.getPassword()*/)
                 {
                     match = true;
                 }
@@ -45,9 +47,9 @@ namespace project
             }
             if(match==true)
             {
-                MessageBox.Show(add.getName() + "님 환영합니다.");
+                MessageBox.Show(log.Name/*add.getName()*/ + "님 환영합니다.");
                 this.Hide();
-                cf.Show();
+                page.Show();
             }
             else if(match==false)
             {

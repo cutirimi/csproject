@@ -62,8 +62,8 @@ namespace project
 
         private void 확인ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Confirm cfm = new Confirm();
-            cfm.Show();
+            UserPage page = new UserPage();
+            page.Show();
         }
 
         private void 로그인ToolStripMenuItem_Click(object sender, EventArgs e)
