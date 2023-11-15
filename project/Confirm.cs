@@ -15,6 +15,8 @@ namespace project
         public Confirm()
         {
             InitializeComponent();
+
+            drinklist.Enabled = true;
         }
 
         private void Confirm_Load(object sender, EventArgs e)
@@ -27,26 +29,19 @@ namespace project
             if (adddrink.Text != "")
             {
                 drinklist.Items.Add(adddrink.Text);
-                adddrink.Text = "";
+                //adddrink.Text = "";
             }
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
-            if (drinklist.SelectedIndex > -1)
+            if (drinklist.SelectedItems.Count > 0)
             {
-                drinklist.Items.RemoveAt(drinklist.SelectedIndex);
+                foreach (ListViewItem item in drinklist.SelectedItems)
+                {
+                    drinklist.Items.Remove(item);
+                }
             }
-        }
-
-        private void adddrink_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void adddrink_TextChanged_1(object sender, EventArgs e)
-        {
-            drinklist.Items.Add(adddrink);
         }
     }
 }
