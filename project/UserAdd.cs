@@ -25,11 +25,11 @@ namespace project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LoginClass.Name = nametb.Text;
-            LoginClass.Password = passwordtb.Text;
-            LoginClass.Pwcon = pwcontb.Text;
+            Admin.Name = nametb.Text;
+            Admin.Password = passwordtb.Text;
+            Admin.Pwcon = pwcontb.Text;
 
-            if (LoginClass.Password == LoginClass.Pwcon)
+            if (Admin.Password == Admin.Pwcon)
             {
                 MessageBox.Show("등록이 완료되었습니다.");
                 this.Hide();

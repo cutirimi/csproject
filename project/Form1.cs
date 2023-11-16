@@ -51,7 +51,7 @@ namespace project
 
         private void 로그인ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            UserLog ul = new UserLog();
+            UserLogin ul = new UserLogin();
             ul.Show();
         }
 
@@ -68,7 +68,7 @@ namespace project
 
         private void 로그인ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserLog login = new UserLog();
+            UserLogin login = new UserLogin();
             login.Show();
         }
     }

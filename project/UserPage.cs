@@ -27,7 +27,7 @@ namespace project
 
         private void UserPage_Load(object sender, EventArgs e)
         {
-            label1.Text = LoginClass.Name;
+            label1.Text = Admin.Name;
         }
     }
 }

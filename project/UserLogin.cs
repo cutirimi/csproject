@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace project
 {
-    public partial class UserLog : Form
+    public partial class UserLogin : Form
     {
         UserAdd add = new UserAdd();
         UserPage page = new UserPage();
 
-        public UserLog()
+        public UserLogin()
         {
             InitializeComponent();
             
@@ -31,9 +31,9 @@ namespace project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (lognametb.Text == LoginClass.Name && logpwtb.Text == LoginClass.Password)
+            if (lognametb.Text == Admin.Name && logpwtb.Text == Admin.Password)
             {
-                MessageBox.Show(LoginClass.Name + "님 환영합니다.");
+                MessageBox.Show(Admin.Name + "님 환영합니다.");
                 this.Hide();
                 page.Show();
             }

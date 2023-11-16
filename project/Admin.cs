@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace project
 {
-    public static class LoginClass
+    public static class Admin
     {
         public static string Name { get; set; }
         public static string Password { get; set; }

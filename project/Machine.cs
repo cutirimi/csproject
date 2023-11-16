@@ -3,92 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace project
 {
-    public abstract class Machine
+    abstract class Machine
     {
-        public string Name { get; set; }     //자판기 이름 프로퍼티
-        public List<string> drink;      //음료 품목 -> 동적
-        public List<string> price;      //음료 가격
-        int index = 0;      //품목 개수
-        public abstract void AddDrink(string drinkName, string price, int index);       //음료 추가
-        public abstract void RemoveDrink(int index);        //음료 삭제
+        string name;
+        List<string> drinks;
+        List<string> price;
+        int index;
+        public void AddItem(string drinkname)
+        { 
+            drinks.Add(drinkname);
+        }
+        public void RemoveItem(int index)
+        {
+            drinks.RemoveAt(index);
+        }
+        abstract public string temperature();       //온도
     }
 
-    class Machine1 : Machine
+    class HotDrink : Machine        //뜨거운 음료
     {
-        public Machine1()
+        public string name;
+        public List<string> drinks;
+        public List<string> price;
+        public int index = 0;
+        override public string temperature()
         {
-            Name = "자판기1";
-            drink = new List<string>() { "코카콜라", "펩시", "갈아만든배", "오렌지주스", "포도주스", "생수", "토레타", "포카리", "옥수수수염차"};
-            price = new List<string>() { "1800원", "1800원", "1000원", "800원", "800원", "1000원", "2000원", "1200원", "2000원"};
+            return "hot";
         }
 
-        override public void AddDrink(string drinkName, string drinkPrice, int index)       //음료 추가 AddDrink메소드
-        {
-            if(index<9)
-            {
-                drink.Add(drinkName);
-                price.Add(drinkPrice);
-            }
-            else
-            {
-                MessageBox.Show("음료 추가 불가능");
-            }
-        }
-
-        override public void RemoveDrink(int index)     //음료 삭제 RemoveDrink메소드
-        {
-            if (index >= 0 && index < 9)
-            {
-                drink.RemoveAt(index);
-                price.RemoveAt(index);
-            }
-            else
-            {
-                MessageBox.Show("음료 품목 삭제 불가능");
-            }
-        }
     }
 
-
-    class Machine2 : Machine
+    class ColdDrink : Machine       //차가운 음료
     {
-        public Machine2()
+        public string name;
+        public List<string> drinks;
+        public List<string> price;
+        public int index = 0;
+        public override string temperature()
         {
-            Name = "자판기2";
-            drink = new List<string>();
-            price = new List<string>();
-            drink = new List<string>() { "사이다", "펩시", "봉봉", "사과주스", "포도주스", "생수", "토레타", "초코에몽", "옥수수수염차" };
-            price = new List<string>() { "1200원", "1800원", "800원", "800원", "800원", "1000원", "2000원", "1200원", "2000원" };
-        }
-
-        override public void AddDrink(string drinkName, string drinkPrice, int index)       //음료 추가 AddDrink메소드
-        {
-            if (index < 9)
-            {
-                drink.Add(drinkName);
-                price.Add(drinkPrice);
-            }
-            else
-            {
-                MessageBox.Show("음료 추가 불가능");
-            }
-        }
-
-        override public void RemoveDrink(int index)     //음료 삭제 RemoveDrink메소드
-        {
-            if (index >= 0 && index < 9)
-            {
-                drink.RemoveAt(index);
-                price.RemoveAt(index);
-            }
-            else
-            {
-                MessageBox.Show("음료 품목 삭제 불가능");
-            }
+            return "cold";
         }
     }
 }
