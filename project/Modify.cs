@@ -33,5 +33,10 @@ namespace project
                 drinklist.Items.RemoveAt(drinklist.SelectedIndex);
             }
         }
+
+        private void Modify_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

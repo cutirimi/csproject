@@ -40,9 +40,9 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Plum;
-            this.button1.Location = new System.Drawing.Point(68, 350);
+            this.button1.Location = new System.Drawing.Point(75, 348);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(355, 47);
+            this.button1.Size = new System.Drawing.Size(350, 50);
             this.button1.TabIndex = 13;
             this.button1.Text = "로그인";
             this.button1.UseVisualStyleBackColor = false;
@@ -51,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(65, 262);
+            this.label2.Location = new System.Drawing.Point(75, 258);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 11;
@@ -60,7 +60,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 194);
+            this.label1.Location = new System.Drawing.Point(75, 175);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 15);
             this.label1.TabIndex = 10;
@@ -68,24 +68,24 @@
             // 
             // logpwtb
             // 
-            this.logpwtb.Location = new System.Drawing.Point(68, 283);
+            this.logpwtb.Location = new System.Drawing.Point(75, 283);
             this.logpwtb.Name = "logpwtb";
             this.logpwtb.PasswordChar = '*';
-            this.logpwtb.Size = new System.Drawing.Size(355, 25);
+            this.logpwtb.Size = new System.Drawing.Size(350, 25);
             this.logpwtb.TabIndex = 8;
             // 
             // lognametb
             // 
-            this.lognametb.Location = new System.Drawing.Point(68, 215);
+            this.lognametb.Location = new System.Drawing.Point(75, 200);
             this.lognametb.Name = "lognametb";
-            this.lognametb.Size = new System.Drawing.Size(355, 25);
+            this.lognametb.Size = new System.Drawing.Size(350, 25);
             this.lognametb.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(62, 112);
+            this.label4.Location = new System.Drawing.Point(75, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 33);
             this.label4.TabIndex = 14;
@@ -94,15 +94,15 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Plum;
-            this.button2.Location = new System.Drawing.Point(67, 416);
+            this.button2.Location = new System.Drawing.Point(75, 416);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(355, 47);
+            this.button2.Size = new System.Drawing.Size(350, 50);
             this.button2.TabIndex = 15;
             this.button2.Text = "관리자등록";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // UserLog
+            // UserLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,7 +115,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logpwtb);
             this.Controls.Add(this.lognametb);
-            this.Name = "UserLog";
+            this.Name = "UserLogin";
             this.Text = "관리자 로그인";
             this.Load += new System.EventHandler(this.UserLog_Load);
             this.ResumeLayout(false);

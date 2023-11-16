@@ -32,30 +32,38 @@
             this.drinklist = new System.Windows.Forms.ListBox();
             this.adderbtn = new System.Windows.Forms.Button();
             this.deletebtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // drinktb
             // 
-            this.drinktb.Location = new System.Drawing.Point(53, 83);
+            this.drinktb.Location = new System.Drawing.Point(60, 201);
+            this.drinktb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.drinktb.Name = "drinktb";
-            this.drinktb.Size = new System.Drawing.Size(215, 21);
+            this.drinktb.Size = new System.Drawing.Size(245, 25);
             this.drinktb.TabIndex = 0;
             // 
             // drinklist
             // 
             this.drinklist.FormattingEnabled = true;
-            this.drinklist.ItemHeight = 12;
-            this.drinklist.Location = new System.Drawing.Point(53, 140);
+            this.drinklist.ItemHeight = 15;
+            this.drinklist.Location = new System.Drawing.Point(60, 253);
+            this.drinklist.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.drinklist.Name = "drinklist";
-            this.drinklist.Size = new System.Drawing.Size(215, 136);
+            this.drinklist.Size = new System.Drawing.Size(245, 169);
             this.drinklist.TabIndex = 1;
             // 
             // adderbtn
             // 
             this.adderbtn.BackColor = System.Drawing.SystemColors.Window;
-            this.adderbtn.Location = new System.Drawing.Point(331, 83);
+            this.adderbtn.Location = new System.Drawing.Point(390, 253);
+            this.adderbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.adderbtn.Name = "adderbtn";
-            this.adderbtn.Size = new System.Drawing.Size(100, 50);
+            this.adderbtn.Size = new System.Drawing.Size(150, 60);
             this.adderbtn.TabIndex = 2;
             this.adderbtn.Text = "추가";
             this.adderbtn.UseVisualStyleBackColor = false;
@@ -64,26 +72,81 @@
             // deletebtn
             // 
             this.deletebtn.BackColor = System.Drawing.SystemColors.Window;
-            this.deletebtn.Location = new System.Drawing.Point(331, 156);
+            this.deletebtn.Location = new System.Drawing.Point(390, 362);
+            this.deletebtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(100, 50);
+            this.deletebtn.Size = new System.Drawing.Size(150, 60);
             this.deletebtn.TabIndex = 3;
             this.deletebtn.Text = "삭제";
             this.deletebtn.UseVisualStyleBackColor = false;
             this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(60, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 53);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "차가운 음료\r\n자판기 생성";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(192, 57);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(115, 53);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "뜨거운 음료\r\n자판기 생성";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(60, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(487, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "------------------------------------------------------------";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(60, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "자판기 선택";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(60, 168);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(180, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "음료 추가 및 삭제";
+            // 
             // Modify
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-            this.ClientSize = new System.Drawing.Size(484, 361);
+            this.ClientSize = new System.Drawing.Size(582, 453);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.adderbtn);
             this.Controls.Add(this.drinklist);
             this.Controls.Add(this.drinktb);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Modify";
             this.Text = "자판기 수정";
+            this.Load += new System.EventHandler(this.Modify_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,5 +158,10 @@
         private System.Windows.Forms.ListBox drinklist;
         private System.Windows.Forms.Button adderbtn;
         private System.Windows.Forms.Button deletebtn;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

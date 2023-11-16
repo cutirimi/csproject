@@ -21,13 +21,15 @@ namespace project
 
         private void modifybtn_Click(object sender, EventArgs e)
         {
-            Modify modify = new Modify();
-            modify.Show();
+            DrinkMachineSelect dms = new DrinkMachineSelect();
+            dms.Show();
         }
 
         private void UserPage_Load(object sender, EventArgs e)
         {
-            label1.Text = Admin.Name;
+            label1.Text = Admin.Name + "님 페이지";
+            label1.Font = new Font(label1.Font, FontStyle.Bold | FontStyle.Underline);      //폰트 굵기와 밑줄 설정
+            label1.Font = new Font(label1.Font.FontFamily, 14);     //폰트 크기 설정
         }
     }
 }

@@ -34,7 +34,7 @@ namespace project
         private void 자판기1ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Machine machine1 = new Machine();
-            Form2 fm2 = new Form2();
+            DrinkMachine fm2 = new DrinkMachine();
             machine1.name = "자판기1";
             fm2.Text = machine1.name;
             fm2.Show();

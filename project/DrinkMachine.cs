@@ -12,11 +12,11 @@ using project;
 
 namespace project
 {
-    public partial class Form2 : Form
+    public partial class DrinkMachine : Form
     {
         Machine1 machine1 = new Machine1();
 
-        public Form2()
+        public DrinkMachine()
         {
             InitializeComponent();
         }

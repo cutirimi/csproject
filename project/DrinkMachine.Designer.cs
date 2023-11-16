@@ -1,6 +1,6 @@
 ﻿namespace project
 {
-    partial class Form2
+    partial class DrinkMachine
     {
         /// <summary>
         /// Required designer variable.
