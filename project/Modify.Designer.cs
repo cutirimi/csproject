@@ -32,8 +32,8 @@
             this.drinklist = new System.Windows.Forms.ListBox();
             this.adderbtn = new System.Windows.Forms.Button();
             this.deletebtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.coldbtn = new System.Windows.Forms.Button();
+            this.hotbtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -81,23 +81,25 @@
             this.deletebtn.UseVisualStyleBackColor = false;
             this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
-            // button1
+            // coldbtn
             // 
-            this.button1.Location = new System.Drawing.Point(60, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 53);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "차가운 음료\r\n자판기 생성";
-            this.button1.UseVisualStyleBackColor = true;
+            this.coldbtn.Location = new System.Drawing.Point(60, 57);
+            this.coldbtn.Name = "coldbtn";
+            this.coldbtn.Size = new System.Drawing.Size(115, 53);
+            this.coldbtn.TabIndex = 4;
+            this.coldbtn.Text = "차가운 음료\r\n자판기 생성";
+            this.coldbtn.UseVisualStyleBackColor = true;
+            this.coldbtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // hotbtn
             // 
-            this.button2.Location = new System.Drawing.Point(192, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 53);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "뜨거운 음료\r\n자판기 생성";
-            this.button2.UseVisualStyleBackColor = true;
+            this.hotbtn.Location = new System.Drawing.Point(192, 57);
+            this.hotbtn.Name = "hotbtn";
+            this.hotbtn.Size = new System.Drawing.Size(115, 53);
+            this.hotbtn.TabIndex = 5;
+            this.hotbtn.Text = "뜨거운 음료\r\n자판기 생성";
+            this.hotbtn.UseVisualStyleBackColor = true;
+            this.hotbtn.Click += new System.EventHandler(this.hotbtn_Click);
             // 
             // label1
             // 
@@ -137,8 +139,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.hotbtn);
+            this.Controls.Add(this.coldbtn);
             this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.adderbtn);
             this.Controls.Add(this.drinklist);
@@ -158,8 +160,8 @@
         private System.Windows.Forms.ListBox drinklist;
         private System.Windows.Forms.Button adderbtn;
         private System.Windows.Forms.Button deletebtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button coldbtn;
+        private System.Windows.Forms.Button hotbtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

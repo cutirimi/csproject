@@ -21,8 +21,8 @@ namespace project
 
         private void modifybtn_Click(object sender, EventArgs e)
         {
-            DrinkMachineSelect dms = new DrinkMachineSelect();
-            dms.Show();
+            Modify md = new Modify();
+            md.Show();
         }
 
         private void UserPage_Load(object sender, EventArgs e)

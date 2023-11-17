@@ -38,5 +38,19 @@ namespace project
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ColdDrink colddrink = new ColdDrink();
+            hotbtn.Visible = false;
+            coldbtn.Enabled = false;
+        }
+
+        private void hotbtn_Click(object sender, EventArgs e)
+        {
+            HotDrink hotdrink = new HotDrink();
+            coldbtn.Visible = false;
+            hotbtn.Enabled = false;
+        }
     }
 }
