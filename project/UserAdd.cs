@@ -39,5 +39,17 @@ namespace project
                 MessageBox.Show("비밀번호와 비밀번호 확인이 일치하지않습니다.");
             }
         }
+
+        private void hotdrinkbtn_Click(object sender, EventArgs e)
+        {
+            HotDrink hd = new HotDrink();
+            MessageBox.Show("뜨거운 음료 자판기로 설정되었습니다.");
+        }
+
+        private void colddrinkbtn_Click(object sender, EventArgs e)
+        {
+            ColdDrink cd = new ColdDrink();
+            MessageBox.Show("차가운 음료 자판기로 설정되었습니다.");
+        }
     }
 }
