@@ -12,6 +12,28 @@ namespace project
 {
     public partial class Modify : Form
     {
+        HotDrink hotdrink=new HotDrink();
+        ColdDrink colddrink = new ColdDrink();
+
+        public void FormClear()     //버튼 클릭시 drinktb 클리어시키는 용도로 사용
+        {
+            drinktb.Clear();
+        }
+
+        public void AddHotdrink(HotDrink hotdrink)
+        {
+            string[] items = new string[] { hotdrink.name, hotdrink.drink, hotdrink.price };
+            int save = hotdrink.cnt;
+            ListViewItem lvi = new ListViewItem(items);
+            drinklist.Items.Add(lvi);
+        }
+
+        public void AddColddrink(ColdDrink colddrink)
+        {
+            string[] items = new string[] { colddrink.name, colddrink.drink, colddrink.price };
+            int save = colddrink.cnt;
+        }
+
         public Modify()
         {
             InitializeComponent();
