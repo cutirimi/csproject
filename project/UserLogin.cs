@@ -31,13 +31,21 @@ namespace project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (lognametb.Text == Admin.Name && logpwtb.Text == Admin.Password)
+            string logname = lognametb.Text;
+            string logpw = logpwtb.Text;
+            bool login = false;
+
+            for(int i=0;i<Admin.Name.Count;i++)
             {
-                MessageBox.Show(Admin.Name + "님 환영합니다.");
-                this.Hide();
-                page.Show();
+                if (logname == Admin.Name[i] && logpw == Admin.Password[i])
+                {
+                    MessageBox.Show(Admin.Name[i] + "님 환영합니다.");
+                    this.Hide();
+                    page.Show();
+                    login = true;
+                }
             }
-            else
+            if (!login)
             {
                 MessageBox.Show("아이디 혹은 비밀번호가 일치하지않습니다.\n 다시 입력해주세요.");
             }

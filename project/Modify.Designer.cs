@@ -28,29 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.drinktb = new System.Windows.Forms.TextBox();
+            this.itemtb = new System.Windows.Forms.TextBox();
             this.drinklist = new System.Windows.Forms.ListBox();
             this.adderbtn = new System.Windows.Forms.Button();
             this.deletebtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.cnttb = new System.Windows.Forms.TextBox();
+            this.pricetb = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // drinktb
+            // itemtb
             // 
-            this.drinktb.Location = new System.Drawing.Point(28, 72);
-            this.drinktb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.drinktb.Name = "drinktb";
-            this.drinktb.Size = new System.Drawing.Size(245, 25);
-            this.drinktb.TabIndex = 0;
+            this.itemtb.Location = new System.Drawing.Point(103, 72);
+            this.itemtb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.itemtb.Name = "itemtb";
+            this.itemtb.Size = new System.Drawing.Size(170, 25);
+            this.itemtb.TabIndex = 0;
             // 
             // drinklist
             // 
             this.drinklist.FormattingEnabled = true;
             this.drinklist.ItemHeight = 15;
-            this.drinklist.Location = new System.Drawing.Point(28, 124);
+            this.drinklist.Location = new System.Drawing.Point(28, 203);
             this.drinklist.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.drinklist.Name = "drinklist";
-            this.drinklist.Size = new System.Drawing.Size(245, 169);
+            this.drinklist.Size = new System.Drawing.Size(245, 124);
             this.drinklist.TabIndex = 1;
             // 
             // adderbtn
@@ -87,17 +92,65 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "음료 추가 및 삭제";
             // 
+            // cnttb
+            // 
+            this.cnttb.Location = new System.Drawing.Point(103, 152);
+            this.cnttb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cnttb.Name = "cnttb";
+            this.cnttb.Size = new System.Drawing.Size(170, 25);
+            this.cnttb.TabIndex = 10;
+            // 
+            // pricetb
+            // 
+            this.pricetb.Location = new System.Drawing.Point(103, 112);
+            this.pricetb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pricetb.Name = "pricetb";
+            this.pricetb.Size = new System.Drawing.Size(170, 25);
+            this.pricetb.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 15);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "음료명";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(43, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 15);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "가격";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 155);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 15);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "수량";
+            // 
             // Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-            this.ClientSize = new System.Drawing.Size(482, 303);
+            this.ClientSize = new System.Drawing.Size(482, 349);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cnttb);
+            this.Controls.Add(this.pricetb);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.adderbtn);
             this.Controls.Add(this.drinklist);
-            this.Controls.Add(this.drinktb);
+            this.Controls.Add(this.itemtb);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Modify";
             this.Text = "자판기 수정";
@@ -109,10 +162,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox drinktb;
+        private System.Windows.Forms.TextBox itemtb;
         private System.Windows.Forms.ListBox drinklist;
         private System.Windows.Forms.Button adderbtn;
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox cnttb;
+        private System.Windows.Forms.TextBox pricetb;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }

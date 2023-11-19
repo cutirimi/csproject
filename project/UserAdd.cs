@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,12 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace project
 {
     public partial class UserAdd : Form
     {
-        
         public UserAdd()
         {
             InitializeComponent();
@@ -20,18 +21,22 @@ namespace project
 
         private void UserAdd_Load(object sender, EventArgs e)
         {
-
+            //Admin.FileOutput();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Admin.Name = nametb.Text;
-            Admin.Password = passwordtb.Text;
-            Admin.Pwcon = pwcontb.Text;
+            string name = nametb.Text;
+            string password = passwordtb.Text;
+            string pwcon = pwcontb.Text;
 
-            if (Admin.Password == Admin.Pwcon)
+            if (password == pwcon)
             {
+                Admin.Name.Add(name);
+                Admin.Password.Add(password);
+
                 MessageBox.Show("등록이 완료되었습니다.");
+                Admin.FileInput();
                 this.Hide();
             }
             else
@@ -43,13 +48,15 @@ namespace project
         private void hotdrinkbtn_Click(object sender, EventArgs e)
         {
             HotDrink hd = new HotDrink();
-            MessageBox.Show("뜨거운 음료 자판기로 설정되었습니다.");
+            Modify modifyForm = new Modify(hd); // ColdDrink 객체는 null로 전달합니다.
+            modifyForm.Show();
         }
 
         private void colddrinkbtn_Click(object sender, EventArgs e)
         {
             ColdDrink cd = new ColdDrink();
-            MessageBox.Show("차가운 음료 자판기로 설정되었습니다.");
+            Modify modifyForm = new Modify(cd); // ColdDrink 객체는 null로 전달합니다.
+            modifyForm.Show();
         }
     }
 }

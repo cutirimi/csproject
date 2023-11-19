@@ -27,7 +27,10 @@ namespace project
 
         private void UserPage_Load(object sender, EventArgs e)
         {
-            label1.Text = Admin.Name + "님 페이지";
+            for(int i=0;i<Admin.Name.Count;i++)
+            {
+                label1.Text = Admin.Name + "님 페이지";
+            }
             label1.Font = new Font(label1.Font, FontStyle.Bold | FontStyle.Underline);      //폰트 굵기와 밑줄 설정
             label1.Font = new Font(label1.Font.FontFamily, 14);     //폰트 크기 설정
         }
