@@ -13,6 +13,8 @@ namespace project
     
     public partial class Form1 : Form
     {
+        UserLogin login = new UserLogin();
+
         public class Machine
         {
             public string name;     //자판기명
@@ -49,26 +51,8 @@ namespace project
             fm3.Show();
         }
 
-        private void 로그인ToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            UserLogin ul = new UserLogin();
-            ul.Show();
-        }
-
-        private void 관리ToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 확인ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UserPage page = new UserPage();
-            page.Show();
-        }
-
         private void 로그인ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserLogin login = new UserLogin();
             login.Show();
         }
     }

@@ -36,14 +36,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.uploadbtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.hotdrinkbtn = new System.Windows.Forms.Button();
-            this.colddrinkbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nametb
             // 
-            this.nametb.Location = new System.Drawing.Point(75, 169);
+            this.nametb.Location = new System.Drawing.Point(75, 185);
             this.nametb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nametb.Name = "nametb";
             this.nametb.Size = new System.Drawing.Size(350, 25);
@@ -51,7 +48,7 @@
             // 
             // passwordtb
             // 
-            this.passwordtb.Location = new System.Drawing.Point(75, 233);
+            this.passwordtb.Location = new System.Drawing.Point(75, 249);
             this.passwordtb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwordtb.Name = "passwordtb";
             this.passwordtb.PasswordChar = '*';
@@ -60,7 +57,7 @@
             // 
             // pwcontb
             // 
-            this.pwcontb.Location = new System.Drawing.Point(75, 304);
+            this.pwcontb.Location = new System.Drawing.Point(75, 320);
             this.pwcontb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pwcontb.Name = "pwcontb";
             this.pwcontb.PasswordChar = '*';
@@ -70,7 +67,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(75, 144);
+            this.label1.Location = new System.Drawing.Point(75, 160);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 15);
             this.label1.TabIndex = 3;
@@ -79,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 208);
+            this.label2.Location = new System.Drawing.Point(75, 224);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 4;
@@ -88,7 +85,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(75, 279);
+            this.label3.Location = new System.Drawing.Point(75, 295);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 15);
             this.label3.TabIndex = 5;
@@ -97,7 +94,7 @@
             // uploadbtn
             // 
             this.uploadbtn.BackColor = System.Drawing.Color.Plum;
-            this.uploadbtn.Location = new System.Drawing.Point(75, 437);
+            this.uploadbtn.Location = new System.Drawing.Point(75, 393);
             this.uploadbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uploadbtn.Name = "uploadbtn";
             this.uploadbtn.Size = new System.Drawing.Size(350, 48);
@@ -116,44 +113,12 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "관리자 등록";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(75, 354);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 15);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "자판기 선택";
-            // 
-            // hotdrinkbtn
-            // 
-            this.hotdrinkbtn.Location = new System.Drawing.Point(75, 379);
-            this.hotdrinkbtn.Name = "hotdrinkbtn";
-            this.hotdrinkbtn.Size = new System.Drawing.Size(165, 25);
-            this.hotdrinkbtn.TabIndex = 10;
-            this.hotdrinkbtn.Text = "뜨거운 음료";
-            this.hotdrinkbtn.UseVisualStyleBackColor = true;
-            this.hotdrinkbtn.Click += new System.EventHandler(this.hotdrinkbtn_Click);
-            // 
-            // colddrinkbtn
-            // 
-            this.colddrinkbtn.Location = new System.Drawing.Point(260, 379);
-            this.colddrinkbtn.Name = "colddrinkbtn";
-            this.colddrinkbtn.Size = new System.Drawing.Size(165, 25);
-            this.colddrinkbtn.TabIndex = 11;
-            this.colddrinkbtn.Text = "차가운 음료";
-            this.colddrinkbtn.UseVisualStyleBackColor = true;
-            this.colddrinkbtn.Click += new System.EventHandler(this.colddrinkbtn_Click);
-            // 
             // UserAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(482, 552);
-            this.Controls.Add(this.colddrinkbtn);
-            this.Controls.Add(this.hotdrinkbtn);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.uploadbtn);
             this.Controls.Add(this.label3);
@@ -181,8 +146,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button uploadbtn;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button hotdrinkbtn;
-        private System.Windows.Forms.Button colddrinkbtn;
     }
 }

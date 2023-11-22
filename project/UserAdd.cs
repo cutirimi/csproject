@@ -21,7 +21,7 @@ namespace project
 
         private void UserAdd_Load(object sender, EventArgs e)
         {
-            //Admin.FileOutput();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,20 +43,6 @@ namespace project
             {
                 MessageBox.Show("비밀번호와 비밀번호 확인이 일치하지않습니다.");
             }
-        }
-
-        private void hotdrinkbtn_Click(object sender, EventArgs e)
-        {
-            HotDrink hd = new HotDrink();
-            Modify modifyForm = new Modify(hd); // ColdDrink 객체는 null로 전달합니다.
-            modifyForm.Show();
-        }
-
-        private void colddrinkbtn_Click(object sender, EventArgs e)
-        {
-            ColdDrink cd = new ColdDrink();
-            Modify modifyForm = new Modify(cd); // ColdDrink 객체는 null로 전달합니다.
-            modifyForm.Show();
         }
     }
 }
