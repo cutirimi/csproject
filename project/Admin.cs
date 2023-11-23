@@ -13,7 +13,7 @@ namespace project
         public static List<string> Password { get; set; } = new List<string>();
         public static string savename { get; set; }     //사용자 이름 저장할 필드 -> List<string>으로는 하나의 이름 접근 불가능하기 때문에 추가
         public static string Pwcon { get; set; }
-        public static void FileInput()      //파일쓰기
+        public static void FileInput()      //파일쓰기 xptmxm
         {
             StreamWriter st = null;
             try
