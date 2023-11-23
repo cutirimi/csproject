@@ -12,7 +12,6 @@ namespace project
     {
         UserAdd add = new UserAdd();
         UserPage page = new UserPage();
-        SelectType st = new SelectType();
 
         public UserLogin()
         {
@@ -42,7 +41,7 @@ namespace project
                 MessageBox.Show(logname + "님 환영합니다.");
                 Admin.savename = logname;
                 this.Hide();
-                st.Show();
+                page.Show();
             }
             else
             {

@@ -14,6 +14,9 @@ namespace project
 {
     public partial class UserAdd : Form
     {
+        ColdDrink cd=new ColdDrink();
+        HotDrink hd = new HotDrink();
+
         public UserAdd()
         {
             InitializeComponent();
@@ -43,6 +46,18 @@ namespace project
             {
                 MessageBox.Show("비밀번호와 비밀번호 확인이 일치하지않습니다.");
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Admin.savetype = cd.SaveType();
+            MessageBox.Show("차가운 음료 자판기가 생성되었습니다.");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Admin.savetype = hd.SaveType();
+            MessageBox.Show("뜨거운 음료 자판기가 생성되었습니다.");
         }
     }
 }

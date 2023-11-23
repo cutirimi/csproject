@@ -14,9 +14,8 @@ namespace project
     public partial class UserPage : Form
     {
         UserAdd ua = new UserAdd();
-        ColdDrink cd = new ColdDrink();
+        ColdDrink cd= new ColdDrink();
         HotDrink hd = new HotDrink();
-        SelectType st = new SelectType();
 
         public UserPage()
         {
@@ -26,14 +25,12 @@ namespace project
 
         private void modifybtn_Click(object sender, EventArgs e)
         {
-            st.typebool();
-
-            if (cd.SaveType=="cold")
+            if (Admin.savetype=="cold")
             {
                 ColdModify cm = new ColdModify();
                 cm.Show();
             }
-            else if(hd.SaveType=="hot")
+            else if(Admin.savetype =="hot")
             {
                 HotModify hm = new HotModify();
                 hm.Show();

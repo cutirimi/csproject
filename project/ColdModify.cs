@@ -13,10 +13,9 @@ namespace project
 {
     public partial class ColdModify : Form
     {
-        SelectType st = new SelectType();
         ColdDrink cd = new ColdDrink();
         UserPage up = new UserPage();
-        string type = "cold";
+        ColdItem ci = new ColdItem();
 
         public ColdModify()
         {
@@ -29,11 +28,11 @@ namespace project
             itemtb.Clear();
         }
 
-        public void AddDrinkToListView(Machine machine)     //리스트에 Machine정보 추가
+        public void AddDrinkToListView()     //리스트에 Machine정보 추가
         {
-            for (int i = 0; i < machine.item.Count; i++)
+            for (int i = 0; i < ci.DrinkName.Count; i++)
             {
-                ListViewItem lvi = new ListViewItem(new[] { machine.item[i], machine.price[i], machine.cnt[i].ToString() });
+                ListViewItem lvi = new ListViewItem(new[] { ci.DrinkName[i], ci.Price[i], ci.Stock[i].ToString() });
 
                 drinklist.Items.Add(lvi);
             }
@@ -52,7 +51,7 @@ namespace project
         private void Modify_Load(object sender, EventArgs e)
         {
             // Modify 폼이 로드될 때의 추가 로직
-            st.Hide();
+            //st.Hide();
         }
 
         private void movebtn_Click(object sender, EventArgs e)

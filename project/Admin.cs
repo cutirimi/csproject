@@ -13,12 +13,13 @@ namespace project
         public static List<string> Password { get; set; } = new List<string>();
         public static string savename { get; set; }     //사용자 이름 저장할 필드 -> List<string>으로는 하나의 이름 접근 불가능하기 때문에 추가
         public static string Pwcon { get; set; }
-        public static void FileInput()      //파일쓰기 xptmxm
+        public static string savetype { get; set; }
+        public static void FileInput()      //파일쓰기
         {
             StreamWriter st = null;
             try
             {
-                FileStream file = new FileStream("Admin.txt", FileMode.Append);
+                FileStream file = new FileStream("../../Admin.txt", FileMode.Append);
                 st = new StreamWriter(file, System.Text.Encoding.Default);
 
                 int lastIndex = Name.Count - 1;     //새로 추가된 인덱스
@@ -47,7 +48,7 @@ namespace project
 
             try
             {
-                sr = new StreamReader("Admin.txt", System.Text.Encoding.Default);
+                sr = new StreamReader("../../Admin.txt", System.Text.Encoding.Default);
 
                 while (!sr.EndOfStream)
                 {
