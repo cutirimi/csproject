@@ -20,17 +20,16 @@ namespace project
         public UserPage()
         {
             InitializeComponent();
-            Admin.FileOutput();
         }
 
         private void modifybtn_Click(object sender, EventArgs e)
         {
-            if (Admin.savetype=="cold")
+            if (Admin.MachineType=="cold")
             {
                 ColdModify cm = new ColdModify();
                 cm.Show();
             }
-            else if(Admin.savetype =="hot")
+            else if(Admin.MachineType =="hot")
             {
                 HotModify hm = new HotModify();
                 hm.Show();
@@ -43,7 +42,7 @@ namespace project
 
         private void UserPage_Load(object sender, EventArgs e)
         {
-            label1.Text = Admin.savename + "님 페이지";
+            label1.Text = Admin.AdminName+ "님 페이지";
 
             label1.Font = new Font(label1.Font, FontStyle.Bold | FontStyle.Underline);      //폰트 굵기와 밑줄 설정
             label1.Font = new Font(label1.Font.FontFamily, 14);     //폰트 크기 설정

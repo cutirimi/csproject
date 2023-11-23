@@ -28,7 +28,7 @@ namespace project
 
                 if (finalindex >= 0)
                 {
-                    st.WriteLine("관리자명: " + Admin.savename + " / 음료품목: " + DrinkName[finalindex] + " / 가격: " + Price[finalindex] + " / 재고: " + Stock[finalindex]);
+                    st.WriteLine("관리자명: " + Admin.AdminName + " / 음료품목: " + DrinkName[finalindex] + " / 가격: " + Price[finalindex] + " / 재고: " + Stock[finalindex]);
                 }
             }
             catch (Exception ex)

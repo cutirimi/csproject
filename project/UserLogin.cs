@@ -16,7 +16,6 @@ namespace project
         public UserLogin()
         {
             InitializeComponent();
-            Admin.FileOutput();
         }
 
         private void UserLog_Load(object sender, EventArgs e)
@@ -39,7 +38,6 @@ namespace project
             if (login)
             {
                 MessageBox.Show(logname + "님 환영합니다.");
-                Admin.savename = logname;
                 this.Hide();
                 page.Show();
             }

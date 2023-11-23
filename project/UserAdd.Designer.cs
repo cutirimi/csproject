@@ -36,9 +36,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.uploadbtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // nametb
@@ -116,26 +116,6 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "관리자 등록";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(66, 297);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 20);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "차가운 자판기";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(232, 297);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 20);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "뜨거운 자판기";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -145,15 +125,40 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "비밀번호 확인";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(68, 301);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(99, 16);
+            this.radioButton1.TabIndex = 11;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "차가운 자판기";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.Click += new System.EventHandler(this.radioButton1_Click);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(207, 301);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(99, 16);
+            this.radioButton2.TabIndex = 12;
+            this.radioButton2.Text = "뜨거운 자판기";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.Click += new System.EventHandler(this.radioButton2_Click);
+
+            // 
             // UserAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(422, 442);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.uploadbtn);
             this.Controls.Add(this.label3);
@@ -181,8 +186,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button uploadbtn;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }

@@ -32,14 +32,12 @@ namespace project
             string name = nametb.Text;
             string password = passwordtb.Text;
             string pwcon = pwcontb.Text;
-
+            string machineType = radioButton1.Checked ? "cold" : "hot";
             if (password == pwcon)
             {
-                Admin.Name.Add(name);
-                Admin.Password.Add(password);
 
                 MessageBox.Show("등록이 완료되었습니다.");
-                Admin.FileInput();
+                Admin.FileInput(name , password, machineType);
                 this.Hide();
             }
             else
@@ -48,16 +46,16 @@ namespace project
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void radioButton1_Click(object sender, EventArgs e)
         {
-            Admin.savetype = cd.SaveType();
-            MessageBox.Show("차가운 음료 자판기가 생성되었습니다.");
+            radioButton2.Checked = false;
+            radioButton1.Checked = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void radioButton2_Click(object sender, EventArgs e)
         {
-            Admin.savetype = hd.SaveType();
-            MessageBox.Show("뜨거운 음료 자판기가 생성되었습니다.");
+            radioButton1.Checked = false;
+            radioButton2.Checked = true;
         }
     }
 }
