@@ -35,7 +35,7 @@ namespace project
 
             bool login = Admin.FindUser(logname, logpw);
 
-            if (login)
+            if (login==true)
             {
                 MessageBox.Show(logname + "님 환영합니다.");
                 this.Hide();

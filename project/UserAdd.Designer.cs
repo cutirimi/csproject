@@ -39,11 +39,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nametb
             // 
-            this.nametb.Location = new System.Drawing.Point(66, 137);
+            this.nametb.Location = new System.Drawing.Point(66, 141);
             this.nametb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nametb.Name = "nametb";
             this.nametb.Size = new System.Drawing.Size(307, 21);
@@ -51,7 +52,7 @@
             // 
             // passwordtb
             // 
-            this.passwordtb.Location = new System.Drawing.Point(66, 188);
+            this.passwordtb.Location = new System.Drawing.Point(66, 192);
             this.passwordtb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwordtb.Name = "passwordtb";
             this.passwordtb.PasswordChar = '*';
@@ -60,7 +61,7 @@
             // 
             // pwcontb
             // 
-            this.pwcontb.Location = new System.Drawing.Point(66, 245);
+            this.pwcontb.Location = new System.Drawing.Point(66, 249);
             this.pwcontb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pwcontb.Name = "pwcontb";
             this.pwcontb.PasswordChar = '*';
@@ -70,7 +71,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 117);
+            this.label1.Location = new System.Drawing.Point(66, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 3;
@@ -79,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 168);
+            this.label2.Location = new System.Drawing.Point(66, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 4;
@@ -88,7 +89,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 225);
+            this.label3.Location = new System.Drawing.Point(66, 229);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 12);
             this.label3.TabIndex = 5;
@@ -97,7 +98,7 @@
             // uploadbtn
             // 
             this.uploadbtn.BackColor = System.Drawing.Color.Plum;
-            this.uploadbtn.Location = new System.Drawing.Point(66, 342);
+            this.uploadbtn.Location = new System.Drawing.Point(66, 351);
             this.uploadbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uploadbtn.Name = "uploadbtn";
             this.uploadbtn.Size = new System.Drawing.Size(306, 38);
@@ -119,17 +120,17 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 280);
+            this.label5.Location = new System.Drawing.Point(64, 290);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 12);
+            this.label5.Size = new System.Drawing.Size(69, 12);
             this.label5.TabIndex = 10;
-            this.label5.Text = "비밀번호 확인";
+            this.label5.Text = "자판기 선택";
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(68, 301);
+            this.radioButton1.Location = new System.Drawing.Point(66, 309);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(99, 16);
             this.radioButton1.TabIndex = 11;
@@ -141,14 +142,24 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(207, 301);
+            this.radioButton2.Location = new System.Drawing.Point(205, 309);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(99, 16);
             this.radioButton2.TabIndex = 12;
             this.radioButton2.Text = "뜨거운 자판기";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.Click += new System.EventHandler(this.radioButton2_Click);
-
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("굴림", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(125, 174);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 9);
+            this.label6.TabIndex = 13;
+            this.label6.Text = " *특수문자 $사용 불가능";
             // 
             // UserAdd
             // 
@@ -156,6 +167,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(422, 442);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label5);
@@ -189,5 +201,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label6;
     }
 }

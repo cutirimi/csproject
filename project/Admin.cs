@@ -16,9 +16,9 @@ namespace project
             StreamWriter st = null;
             try
             {
-                FileStream file = new FileStream("../../Admin.txt", FileMode.Append);
+                FileStream file = new FileStream("Admin.txt", FileMode.Append);       //../../Admin.txt
                 st = new StreamWriter(file, System.Text.Encoding.Default);
-                st.WriteLine("이름: " + name + " / 비밀번호: " + password + " / 자판기타입: " + type);
+                st.WriteLine(name + "$" + password + "$" + type);
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace project
 
             try
             {
-                sr = new StreamReader("../../Admin.txt", System.Text.Encoding.Default);
+                sr = new StreamReader("Admin.txt", System.Text.Encoding.Default);     //../../Admin.txt
 
                 while (!sr.EndOfStream)
                 {
@@ -65,9 +65,9 @@ namespace project
                 {
                     sr.Close();
                 }
+               
             }
             return false;
-
         }
     }
 }
