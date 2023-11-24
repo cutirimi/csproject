@@ -9,7 +9,7 @@ namespace project
 {
     public static class Admin
     {
-        public static string AdminName { get; set; }     //사용자 이름 저장할 필드 -> List<string>으로는 하나의 이름 접근 불가능하기 때문에 추가
+        public static string AdminName { get; set; }     //관리자이름
         public static string MachineType { get; set; }     //자판기 타입
         public static void FileInput(string name , string password , string type)      //파일쓰기
         {

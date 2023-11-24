@@ -30,12 +30,12 @@ namespace project
 
         public void AddDrinkToListView()     //리스트에 Machine정보 추가
         {
-            for (int i = 0; i < ci.DrinkName.Count; i++)
-            {
-                ListViewItem lvi = new ListViewItem(new[] { ci.DrinkName[i], ci.Price[i], ci.Stock[i].ToString() });
+            //for (int i = 0; i < ci.DrinkName.Count; i++)
+            //{
+            //    ListViewItem lvi = new ListViewItem(new[] { ci.DrinkName[i], ci.Price[i], ci.Stock[i].ToString() });
 
-                drinklist.Items.Add(lvi);
-            }
+            //    drinklist.Items.Add(lvi);
+            //}
         }
 
         private void adderbtn_Click(object sender, EventArgs e)
