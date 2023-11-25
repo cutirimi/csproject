@@ -12,12 +12,12 @@ using System.Xml.Linq;
 
 namespace project
 {
-    public partial class UserAdd : Form
+    public partial class UserAddForm : Form
     {
         ColdDrink cd=new ColdDrink();
         HotDrink hd = new HotDrink();
 
-        public UserAdd()
+        public UserAddForm()
         {
             InitializeComponent();
         }

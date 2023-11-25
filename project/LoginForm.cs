@@ -10,36 +10,49 @@ namespace project
 {
     public partial class LoginForm : Form
     {
-        UserAdd add = new UserAdd();
-        UserPage page = new UserPage();
+        UserAddForm userAddForm = new UserAddForm();
+        UserPageForm userPageFrom = new UserPageForm();
 
         public LoginForm()
         {
             InitializeComponent();
         }
 
-        private void UserLog_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            add.Show();
+            userAddForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            login();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            lognametb.Focus();
+        }
+
+        private void logpwtb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                login();
+            }
+        }
+
+        private void login()
         {
             string logname = lognametb.Text;
             string logpw = logpwtb.Text;
 
             bool login = Admin.FindUser(logname, logpw);
 
-            if (login==true)
+            if (login == true)
             {
                 MessageBox.Show(logname + "님 환영합니다.");
                 this.Hide();
-                page.Show();
+                userPageFrom.Show();
             }
             else
             {

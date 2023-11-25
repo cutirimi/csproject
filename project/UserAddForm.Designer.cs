@@ -1,6 +1,6 @@
 ﻿namespace project
 {
-    partial class UserAdd
+    partial class UserAddForm
     {
         /// <summary>
         /// Required designer variable.
