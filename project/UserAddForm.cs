@@ -14,9 +14,6 @@ namespace project
 {
     public partial class UserAddForm : Form
     {
-        ColdDrink cd=new ColdDrink();
-        HotDrink hd = new HotDrink();
-
         public UserAddForm()
         {
             InitializeComponent();
@@ -24,26 +21,12 @@ namespace project
 
         private void UserAdd_Load(object sender, EventArgs e)
         {
-
+            nametb.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = nametb.Text;
-            string password = passwordtb.Text;
-            string pwcon = pwcontb.Text;
-            string machineType = radioButton1.Checked ? "cold" : "hot";
-            if (password == pwcon)
-            {
-
-                MessageBox.Show("등록이 완료되었습니다.");
-                Admin.FileInput(name , password, machineType);
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("비밀번호와 비밀번호 확인이 일치하지않습니다.");
-            }
+            signup();
         }
 
         private void radioButton1_Click(object sender, EventArgs e)
@@ -56,6 +39,27 @@ namespace project
         {
             radioButton1.Checked = false;
             radioButton2.Checked = true;
+        }
+
+        private void signup()
+        {
+            string name = nametb.Text;
+            string password = passwordtb.Text;
+            string pwcon = pwcontb.Text;
+            string machineType = radioButton1.Checked ? "cold" : "hot";
+
+            //password에서 특수문자 $ 사용 불가능 -> $를 구분자로 사용
+            if (password == pwcon)
+            {
+
+                MessageBox.Show("등록이 완료되었습니다.");
+                Admin.FileInput(name, password, machineType);
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("비밀번호와 비밀번호 확인이 일치하지않습니다.");
+            }
         }
     }
 }
