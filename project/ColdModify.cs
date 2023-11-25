@@ -13,9 +13,9 @@ namespace project
 {
     public partial class ColdModify : Form
     {
-        ColdDrink cd = new ColdDrink();
+        ColdMachine cd = new ColdMachine();
         UserPageForm up = new UserPageForm();
-        ColdItem ci = new ColdItem();
+
 
         public ColdModify()
         {

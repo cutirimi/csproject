@@ -16,7 +16,7 @@ namespace project
     public partial class HotModify : Form
     {
         UserPageForm up = new UserPageForm();
-        HotItem hi= new HotItem();
+        //HotItem hi= new HotItem();
         ListViewItem lvi = new ListViewItem();
         private Admin admin=Admin.GetInstance();
 
@@ -32,13 +32,13 @@ namespace project
 
         public void AddDrink()
         {
-            for(int i = 0;i<hi.DrinkName.Count;i++)
-            {
-                string[] sitems = new string[] { hi.DrinkName[i], hi.Price[i], hi.Stock[i].ToString() };
-                ListViewItem lvi = new ListViewItem(sitems);
-                drinklist.Items.Add(lvi);
-                drinklist.EndUpdate();
-            }
+            //for(int i = 0;i<hi.DrinkName.Count;i++)
+            //{
+            //    string[] sitems = new string[] { hi.DrinkName[i], hi.Price[i], hi.Stock[i].ToString() };
+            //    ListViewItem lvi = new ListViewItem(sitems);
+            //    drinklist.Items.Add(lvi);
+            //    drinklist.EndUpdate();
+            //}
             //string[] sitems = new string[] { hi.DrinkName, hi.Price, hi.Stock };
             //ListViewItem lvi = new ListViewItem(sitems);
             //drinklist.Items.Add(lvi);
@@ -54,35 +54,35 @@ namespace project
         {
             try
             {
-                if (File.Exists(fname) == false)
-                {
-                    FileStream fs = new FileStream(fname, FileMode.OpenOrCreate);
-                    fs.Close();
-                }
-                else
-                {
-                    FileStream fs = File.OpenRead(fname);
-                    StreamReader sr = new StreamReader(fs);
-                    while (sr.EndOfStream == false)
-                    {
-                        string line = sr.ReadLine();
-                        if (line == null) { break; }
-                        string[] sitems = line.Split(',');
-                        admin.MachineType = sitems[0];
-                        for (int i = 0; i <hi.DrinkName.Count;i++)
-                        {
-                            hi.DrinkName[i] = sitems[1];
-                            hi.Price[i] = sitems[2];
-                            hi.Stock[i] = sitems[3];
-                        }
-                        //    hi.DrinkName = sitems[1];
-                        //hi.Price = sitems[2];
-                        //hi.Stock = sitems[3];
-                        AddDrink();
-                    }
-                    sr.Close();
-                    fs.Close();
-                }
+                //if (File.Exists(fname) == false)
+                //{
+                //    FileUtil fs = new FileStream(fname, FileMode.OpenOrCreate);
+                //    fs.Close();
+                //}
+                //else
+                //{
+                //    FileUtil fs = File.OpenRead(fname);
+                //    StreamReader sr = new StreamReader(fs);
+                //    while (sr.EndOfStream == false)
+                //    {
+                //        string line = sr.ReadLine();
+                //        if (line == null) { break; }
+                //        string[] sitems = line.Split(',');
+                //        admin.MachineType = sitems[0];
+                //        for (int i = 0; i <hi.DrinkName.Count;i++)
+                //        {
+                //            hi.DrinkName[i] = sitems[1];
+                //            hi.Price[i] = sitems[2];
+                //            hi.Stock[i] = sitems[3];
+                //        }
+                //        //    hi.DrinkName = sitems[1];
+                //        //hi.Price = sitems[2];
+                //        //hi.Stock = sitems[3];
+                //        AddDrink();
+                //    }
+                //    sr.Close();
+                //    fs.Close();
+                //}
             }
             catch (Exception ex)
             {
@@ -98,28 +98,28 @@ namespace project
 
         private void adderbtn_Click(object sender, EventArgs e)
         {
-            drinklist.BeginUpdate();
+            //drinklist.BeginUpdate();
 
-            hi.DrinkName = itemtb.Text;
-            hi.Price = pricetb.Text;
-            hi.Stock = stocktb.Text;
+            //hi.DrinkName = itemtb.Text;
+            //hi.Price = pricetb.Text;
+            //hi.Stock = stocktb.Text;
 
-            FileStream fs = File.Create(fname);
-            StreamWriter sw = new StreamWriter(fs);
+            //FileUtil fs = File.Create(fname);
+            //StreamWriter sw = new StreamWriter(fs);
 
-            foreach (ListViewItem lvi in drinklist.Items)
-            {
-                admin.MachineType = lvi.SubItems[0].Text;
-                hi.DrinkName = lvi.SubItems[1].Text;
-                hi.Price = lvi.SubItems[2].Text;
-                hi.Stock = lvi.SubItems[3].Text;
-                sw.WriteLine("{0} - {음료: {1}, 가격: {2}, 재고: {3}}", hi.DrinkName, hi.Price, hi.Stock);
-            }
-            sw.Close();
-            fs.Close();
+            //foreach (ListViewItem lvi in drinklist.Items)
+            //{
+            //    admin.MachineType = lvi.SubItems[0].Text;
+            //    hi.DrinkName = lvi.SubItems[1].Text;
+            //    hi.Price = lvi.SubItems[2].Text;
+            //    hi.Stock = lvi.SubItems[3].Text;
+            //    sw.WriteLine("{0} - {음료: {1}, 가격: {2}, 재고: {3}}", hi.DrinkName, hi.Price, hi.Stock);
+            //}
+            //sw.Close();
+            //fs.Close();
 
-            AddDrink();
-            formClear();
+            //AddDrink();
+            //formClear();
         }
 
         private void deletebtn_Click(object sender, EventArgs e)

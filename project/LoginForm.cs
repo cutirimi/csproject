@@ -47,10 +47,12 @@ namespace project
             string logname = lognametb.Text;
             string logpw = logpwtb.Text;
 
-            bool login = admin.FindUser(logname, logpw);
+            int index = FileUtil.FindMachineIndexByUser(logname, logpw);
 
-            if (login == true)
+            if (index != 0)
             {
+                admin.AdminName = logname;
+                admin.SetMachine(index);
                 MessageBox.Show(logname + "님 환영합니다.");
                 this.Hide();
                 userPageFrom.Show();

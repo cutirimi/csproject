@@ -9,10 +9,11 @@ namespace project
 {
     public class Admin
     {
+        private Machine machine;
         private static Admin staticAdmin;
         public static Admin GetInstance()
         {
-            if(staticAdmin==null)
+            if (staticAdmin == null)
             {
                 staticAdmin = new Admin();
             }
@@ -21,63 +22,36 @@ namespace project
 
         public string AdminName { get; set; }     //관리자이름
         public string MachineType { get; set; }     //자판기 타입
-        public void FileInput(string name , string password , string type)      //파일쓰기
+
+        public void SetMachine(int index)
         {
-            StreamWriter st = null;
-            try
+            string machineState = FileUtil.GetMachineStateByIndex(index);
+            if (machineState != null)
             {
-                FileStream file = new FileStream("Admin.txt", FileMode.Append);       //../../Admin.txt
-                st = new StreamWriter(file, System.Text.Encoding.Default);
-                st.WriteLine(name + "$" + password + "$" + type);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("파일을 쓰는 중 오류가 발생했습니다: " + ex.Message);
-            }
-            finally
-            {
-                if (st != null)
+                string[] machineInfo = machineState.Split(':');
+                if (machineInfo[0] == "cold" && machineInfo[1].Length != 0)
                 {
-                    st.Close();
-                }
-            }
-        }
+                    this.machine = new ColdMachine();
 
-        public bool FindUser(string name, string password)       //사용자 찾는 메소드
-        {
-
-            StreamReader sr = null;
-
-            try
-            {
-                sr = new StreamReader("Admin.txt", System.Text.Encoding.Default);     //../../Admin.txt
-
-                while (!sr.EndOfStream)
-                {
-                    string line = sr.ReadLine();
-                    string[] userInfo = line.Split('$');        //구분자 -> 비밀번호에 $ 사용하면 구분자로 인식
-
-                    if (userInfo.Length == 3 && userInfo[0] == name && userInfo[1] == password)
+                    string[] items = machineInfo[1].Split('$');
+                    for (int i = 0; i < items.Length; i++)
                     {
-                        AdminName = name;
-                        MachineType = userInfo[2];
-                        return true;
+                        Item item = new ColdItem(items[i]);
+                        this.machine.AddItem(item);
                     }
+
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("파일을 읽는 중 오류가 발생했습니다: " + ex.Message);
-            }
-            finally
-            {
-                if (sr != null)
+                else if (machineInfo[0] == "hot" && machineInfo[1].Length != 0)
                 {
-                    sr.Close();
+
                 }
-               
             }
-            return false;
+            else
+            {
+
+            }
+
+
         }
     }
 }

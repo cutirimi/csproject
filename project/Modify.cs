@@ -17,13 +17,13 @@ namespace project
             InitializeComponent();
         }
 
-        public Modify(ColdDrink cd)
+        public Modify(ColdMachine cd)
         {
             InitializeComponent();
             ColdModify cm = new ColdModify();
             cm.Show();
         }
-        public Modify(HotDrink hd)
+        public Modify(HotMachine hd)
         {
             InitializeComponent();
             HotModify hm = new HotModify();

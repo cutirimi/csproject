@@ -14,8 +14,8 @@ namespace project
     public partial class UserPageForm : Form
     {
         UserAddForm ua = new UserAddForm();
-        ColdDrink cd= new ColdDrink();
-        HotDrink hd = new HotDrink();
+        ColdMachine cd= new ColdMachine();
+        HotMachine hd = new HotMachine();
         private Admin admin=Admin.GetInstance();
 
         public UserPageForm()

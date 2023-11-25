@@ -11,22 +11,45 @@ namespace project
 {
     public abstract class Machine       //베이스클래스
     {
-        public abstract string SaveType();     //자판기 타입
+        protected List<Item> items;
+        public abstract void AddItem(Item item);
+        public abstract void RemoveItem();
+        public abstract void Modify();
+
     }
 
-    public class HotDrink : Machine     //뜨거운 음료 클래스
+    public class HotMachine : Machine     //뜨거운 음료 클래스
     {
-        public override string SaveType()
+        public HotMachine()
         {
-            return "hot";
+            this.items = new List<Item>();
+        }
+
+        public override void AddItem(Item item)
+        {
+        }
+
+        public override void Modify()
+        {
+        }
+
+        public override void RemoveItem()
+        {
         }
     }
 
-    public class ColdDrink : Machine        //차가운 음료 클래스
+    public class ColdMachine : Machine        //차가운 음료 클래스
     {
-        public override string SaveType()
+        public override void AddItem(Item item)
         {
-            return "cold";
+        }
+
+        public override void Modify()
+        {
+        }
+
+        public override void RemoveItem()
+        {
         }
     }
 }
