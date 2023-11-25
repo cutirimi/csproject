@@ -11,13 +11,13 @@ using static project.MainForm;
 
 namespace project
 {
-    public partial class UserPage : Form
+    public partial class UserPageForm : Form
     {
-        UserAdd ua = new UserAdd();
+        UserAddForm ua = new UserAddForm();
         ColdDrink cd= new ColdDrink();
         HotDrink hd = new HotDrink();
 
-        public UserPage()
+        public UserPageForm()
         {
             InitializeComponent();
         }

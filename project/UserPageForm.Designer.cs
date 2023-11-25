@@ -1,6 +1,6 @@
 ﻿namespace project
 {
-    partial class UserPage
+    partial class UserPageForm
     {
         /// <summary>
         /// Required designer variable.

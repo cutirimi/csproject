@@ -15,7 +15,7 @@ namespace project
 {
     public partial class HotModify : Form
     {
-        UserPage up = new UserPage();
+        UserPageForm up = new UserPageForm();
         HotItem hi= new HotItem();
         ListViewItem lvi = new ListViewItem();
 
