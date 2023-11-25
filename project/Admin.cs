@@ -7,11 +7,21 @@ using System.Threading.Tasks;
 
 namespace project
 {
-    public static class Admin
+    public class Admin
     {
-        public static string AdminName { get; set; }     //관리자이름
-        public static string MachineType { get; set; }     //자판기 타입
-        public static void FileInput(string name , string password , string type)      //파일쓰기
+        private static Admin staticAdmin;
+        public static Admin GetInstance()
+        {
+            if(staticAdmin==null)
+            {
+                staticAdmin = new Admin();
+            }
+            return staticAdmin;
+        }
+
+        public string AdminName { get; set; }     //관리자이름
+        public string MachineType { get; set; }     //자판기 타입
+        public void FileInput(string name , string password , string type)      //파일쓰기
         {
             StreamWriter st = null;
             try
@@ -33,7 +43,7 @@ namespace project
             }
         }
 
-        public static bool FindUser(string name, string password)       //사용자 찾는 메소드
+        public bool FindUser(string name, string password)       //사용자 찾는 메소드
         {
 
             StreamReader sr = null;
