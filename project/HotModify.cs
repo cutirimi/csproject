@@ -16,9 +16,9 @@ namespace project
     public partial class HotModify : Form
     {
         UserPage up = new UserPage();
-
         HotItem hi= new HotItem();
         ListViewItem lvi = new ListViewItem();
+
 
         const string fname = "Machine_State.txt";
 
@@ -32,10 +32,17 @@ namespace project
 
         public void AddDrink()
         {
-            string[] sitems = new string[] { hi.DrinkName, hi.Price, hi.Stock };
-            ListViewItem lvi=new ListViewItem(sitems);
-            drinklist.Items.Add(lvi);
-            drinklist.EndUpdate();
+            for(int i = 0;i<hi.DrinkName.Count;i++)
+            {
+                string[] sitems = new string[] { hi.DrinkName[i], hi.Price[i], hi.Stock[i].ToString() };
+                ListViewItem lvi = new ListViewItem(sitems);
+                drinklist.Items.Add(lvi);
+                drinklist.EndUpdate();
+            }
+            //string[] sitems = new string[] { hi.DrinkName, hi.Price, hi.Stock };
+            //ListViewItem lvi = new ListViewItem(sitems);
+            //drinklist.Items.Add(lvi);
+            //drinklist.EndUpdate();
         }
 
         public HotModify()
@@ -54,17 +61,23 @@ namespace project
                 }
                 else
                 {
-                    FileStream fs=File.OpenRead(fname);
+                    FileStream fs = File.OpenRead(fname);
                     StreamReader sr = new StreamReader(fs);
-                    while (sr.EndOfStream==false)
+                    while (sr.EndOfStream == false)
                     {
                         string line = sr.ReadLine();
                         if (line == null) { break; }
-                        string[]sitems=line.Split(',');
+                        string[] sitems = line.Split(',');
                         Admin.MachineType = sitems[0];
-                        hi.DrinkName = sitems[1];
-                        hi.Price = sitems[2];
-                        hi.Stock = sitems[3];
+                        for (int i = 0; i <hi.DrinkName.Count;i++)
+                        {
+                            hi.DrinkName[i] = sitems[1];
+                            hi.Price[i] = sitems[2];
+                            hi.Stock[i] = sitems[3];
+                        }
+                        //    hi.DrinkName = sitems[1];
+                        //hi.Price = sitems[2];
+                        //hi.Stock = sitems[3];
                         AddDrink();
                     }
                     sr.Close();
@@ -86,14 +99,15 @@ namespace project
         private void adderbtn_Click(object sender, EventArgs e)
         {
             drinklist.BeginUpdate();
+
             hi.DrinkName = itemtb.Text;
-            hi.Price =pricetb.Text;
+            hi.Price = pricetb.Text;
             hi.Stock = stocktb.Text;
 
-            FileStream fs=File.Create(fname);
+            FileStream fs = File.Create(fname);
             StreamWriter sw = new StreamWriter(fs);
 
-            foreach(ListViewItem lvi in drinklist.Items)
+            foreach (ListViewItem lvi in drinklist.Items)
             {
                 Admin.MachineType = lvi.SubItems[0].Text;
                 hi.DrinkName = lvi.SubItems[1].Text;
