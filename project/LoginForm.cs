@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace project
 {
-    public partial class UserLogin : Form
+    public partial class LoginForm : Form
     {
         UserAdd add = new UserAdd();
         UserPage page = new UserPage();
 
-        public UserLogin()
+        public LoginForm()
         {
             InitializeComponent();
         }
