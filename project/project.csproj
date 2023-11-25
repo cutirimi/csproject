@@ -69,20 +69,8 @@
     </Compile>
     <Compile Include="Admin.cs" />
     <Compile Include="beforeM.cs" />
-    <Compile Include="HotModify.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HotModify.Designer.cs">
-      <DependentUpon>HotModify.cs</DependentUpon>
-    </Compile>
     <Compile Include="Item.cs" />
     <Compile Include="Machine.cs" />
-    <Compile Include="ColdModify.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ColdModify.Designer.cs">
-      <DependentUpon>ColdModify.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,12 +105,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ColdModify.resx">
-      <DependentUpon>ColdModify.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HotModify.resx">
-      <DependentUpon>HotModify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modify.resx">
       <DependentUpon>Modify.cs</DependentUpon>

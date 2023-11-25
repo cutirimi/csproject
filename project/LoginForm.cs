@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace project
@@ -12,7 +7,7 @@ namespace project
     {
         UserAddForm userAddForm = new UserAddForm();
         UserPageForm userPageFrom = new UserPageForm();
-        private Admin admin=Admin.GetInstance();
+        private Admin admin = Admin.GetInstance();
 
         public LoginForm()
         {
@@ -46,6 +41,7 @@ namespace project
         {
             string logname = lognametb.Text;
             string logpw = logpwtb.Text;
+
 
             int index = FileUtil.FindMachineIndexByUser(logname, logpw);
 

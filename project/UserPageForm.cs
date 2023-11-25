@@ -7,16 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static project.MainForm;
 
 namespace project
 {
     public partial class UserPageForm : Form
     {
-        UserAddForm ua = new UserAddForm();
-        ColdMachine cd= new ColdMachine();
-        HotMachine hd = new HotMachine();
         private Admin admin=Admin.GetInstance();
+        Modify modify=new Modify();
 
         public UserPageForm()
         {
@@ -25,20 +22,8 @@ namespace project
 
         private void modifybtn_Click(object sender, EventArgs e)
         {
-            if (admin.MachineType=="cold")
-            {
-                ColdModify cm = new ColdModify();
-                cm.Show();
-            }
-            else if(admin.MachineType =="hot")
-            {
-                HotModify hm = new HotModify();
-                hm.Show();
-            }
-            //ColdModify md = new ColdModify();     //수정전
-            //md.Show();
-            //this.Hide();
-            this.Hide();
+            modify.Show();
+            this.Close();
         }
 
         private void UserPage_Load(object sender, EventArgs e)

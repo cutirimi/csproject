@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace project
 {
@@ -21,7 +17,7 @@ namespace project
             int machineIndex = 1;
             try
             {
-                sr = new StreamReader(adminTxtPath, System.Text.Encoding.Default);     //../../Admin.txt
+                sr = new StreamReader(adminTxtPath, System.Text.Encoding.Default);
 
                 while (!sr.EndOfStream)
                 {
@@ -46,7 +42,7 @@ namespace project
             StreamWriter sw = null;
             try
             {
-                FileStream adminTxt = new FileStream(adminTxtPath, FileMode.Append);     
+                FileStream adminTxt = new FileStream(adminTxtPath, FileMode.Append);
 
                 sw = new StreamWriter(adminTxt, System.Text.Encoding.Default);
                 sw.WriteLine(username + "$" + password + "$" + machineIndex);
@@ -63,10 +59,10 @@ namespace project
                 }
             }
 
-            // machineState 파일에 
+            // machineState 파일에 machineType을 동시에 저장
             try
             {
-                FileStream machineStateTxt = new FileStream(machineStateTxtPath, FileMode.Append);     
+                FileStream machineStateTxt = new FileStream(machineStateTxtPath, FileMode.Append);
                 sw = new StreamWriter(machineStateTxt, System.Text.Encoding.Default);
                 sw.WriteLine(machineType + ":");
             }
@@ -92,7 +88,7 @@ namespace project
             int index = 0;
             try
             {
-                sr = new StreamReader(adminTxtPath, System.Text.Encoding.Default);     //../../Admin.txt
+                sr = new StreamReader(adminTxtPath, System.Text.Encoding.Default);
 
                 while (!sr.EndOfStream)
                 {
@@ -122,34 +118,42 @@ namespace project
         }
 
 
-        public static void StoreMachineStateByIndex(int index, List<Item> itemList)
+        public static void StoreMachineStateByIndex(int index, Machine machine)     //인덱스로 MachineState텍스트 파일에 쓰기
         {
             try
             {
-                
                 string tempFilePath = Path.GetTempFileName();
+                FileStream tempFile = new FileStream(tempFilePath, FileMode.Append);
 
-                using (StreamReader reader = new StreamReader(machineStateTxtPath))
-                using (StreamWriter writer = new StreamWriter(tempFilePath))
+                StreamReader sr = new StreamReader(machineStateTxtPath, System.Text.Encoding.Default);
+                StreamWriter sw = new StreamWriter(tempFile, System.Text.Encoding.Default);
+
+                int currentLine = 1;
+                string line;
+
+                // 파일을 읽으면서 수정할 라인을 찾고 변경된 내용을 쓴다
+                while ((line = sr.ReadLine()) != null)
                 {
-                    int currentLine = 1;
-                    string line;
-
-                    // 파일을 읽으면서 수정할 라인을 찾고 변경된 내용을 쓴다
-                    while ((line = reader.ReadLine()) != null)
+                    if (currentLine == index)
                     {
-                        if (currentLine == index)
+                        line = machine.GetMachineType() + ":";
+                        List<Item> items = machine.items;
+                        for (int i = 0; i < items.Count;)
                         {
-                            // 수정 해야하는 라인
+                            Item item = items[i++];
+                            line += item.DrinkName + "#" + item.Price + "#" + item.Stock;
+                            if (i != items.Count) line += '$';
                         }
-                        else
-                        {
-                            writer.WriteLine(line); // 원래 내용 그대로 복사
-                        }
-                        currentLine++;
+                        sw.WriteLine(line);
                     }
+                    else
+                    {
+                        sw.WriteLine(line); // 원래 내용 그대로 복사
+                    }
+                    currentLine++;
                 }
-
+                sr.Close();
+                sw.Close();
                 // 임시 파일을 원래 파일로 복사하고 삭제
                 File.Copy(tempFilePath, machineStateTxtPath, true);
                 File.Delete(tempFilePath);
@@ -161,18 +165,18 @@ namespace project
                 Console.WriteLine("오류 발생: " + e.Message);
             }
         }
-        public static string GetMachineStateByIndex(int index)
+        public static string GetMachineStateByIndex(int index)      //인덱스로 파일 내용 읽기
         {
 
             StreamReader sr = null;
             try
             {
-                sr = new StreamReader(machineStateTxtPath, System.Text.Encoding.Default);     //../../Admin.txt
+                sr = new StreamReader(machineStateTxtPath, System.Text.Encoding.Default);
                 int currentLine = 1;
                 while (!sr.EndOfStream)
                 {
                     string line = sr.ReadLine();
-                    if(currentLine++ == index)
+                    if (currentLine++ == index)
                     {
                         return line;
                     }
