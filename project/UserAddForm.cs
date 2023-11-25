@@ -14,6 +14,8 @@ namespace project
 {
     public partial class UserAddForm : Form
     {
+        private Admin admin = Admin.GetInstance();
+
         public UserAddForm()
         {
             InitializeComponent();
@@ -53,7 +55,7 @@ namespace project
             {
 
                 MessageBox.Show("등록이 완료되었습니다.");
-                Admin.FileInput(name, password, machineType);
+                admin.FileInput(name, password, machineType);
                 this.Hide();
             }
             else

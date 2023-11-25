@@ -12,6 +12,7 @@ namespace project
     {
         UserAddForm userAddForm = new UserAddForm();
         UserPageForm userPageFrom = new UserPageForm();
+        private Admin admin=Admin.GetInstance();
 
         public LoginForm()
         {
@@ -46,7 +47,7 @@ namespace project
             string logname = lognametb.Text;
             string logpw = logpwtb.Text;
 
-            bool login = Admin.FindUser(logname, logpw);
+            bool login = admin.FindUser(logname, logpw);
 
             if (login == true)
             {

@@ -18,7 +18,7 @@ namespace project
         UserPageForm up = new UserPageForm();
         HotItem hi= new HotItem();
         ListViewItem lvi = new ListViewItem();
-
+        private Admin admin=Admin.GetInstance();
 
         const string fname = "Machine_State.txt";
 
@@ -68,7 +68,7 @@ namespace project
                         string line = sr.ReadLine();
                         if (line == null) { break; }
                         string[] sitems = line.Split(',');
-                        Admin.MachineType = sitems[0];
+                        admin.MachineType = sitems[0];
                         for (int i = 0; i <hi.DrinkName.Count;i++)
                         {
                             hi.DrinkName[i] = sitems[1];
@@ -109,7 +109,7 @@ namespace project
 
             foreach (ListViewItem lvi in drinklist.Items)
             {
-                Admin.MachineType = lvi.SubItems[0].Text;
+                admin.MachineType = lvi.SubItems[0].Text;
                 hi.DrinkName = lvi.SubItems[1].Text;
                 hi.Price = lvi.SubItems[2].Text;
                 hi.Stock = lvi.SubItems[3].Text;
