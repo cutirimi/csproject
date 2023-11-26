@@ -68,9 +68,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(70, 293);
+            this.button1.Location = new System.Drawing.Point(32, 300);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 65);
+            this.button1.Size = new System.Drawing.Size(160, 70);
             this.button1.TabIndex = 23;
             this.button1.Text = "사용자";
             this.button1.UseVisualStyleBackColor = true;
@@ -78,9 +78,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(229, 293);
+            this.button2.Location = new System.Drawing.Point(220, 300);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 65);
+            this.button2.Size = new System.Drawing.Size(160, 70);
             this.button2.TabIndex = 24;
             this.button2.Text = "관리자";
             this.button2.UseVisualStyleBackColor = true;

@@ -147,7 +147,6 @@
             this.drinklist.TabIndex = 37;
             this.drinklist.UseCompatibleStateImageBehavior = false;
             this.drinklist.View = System.Windows.Forms.View.Details;
-            this.drinklist.SelectedIndexChanged += new System.EventHandler(this.drinklist_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

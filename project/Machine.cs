@@ -11,7 +11,7 @@ namespace project
             items = new List<Item>();
         }
         public void AddItem(Item item) { items.Add(item); }
-        public void RemoveItem() { }
+        public void RemoveItem(int index) { items.RemoveAt(index); }
         public abstract string GetMachineType();
 
     }

@@ -7,7 +7,7 @@ namespace project
         private int index;
         private Machine machine;
         private static Admin staticAdmin;
-        public static Admin GetInstance()
+        public static Admin GetInstance()       //싱글톤
         {
             if (staticAdmin == null)
             {
@@ -18,7 +18,7 @@ namespace project
 
         public string AdminName { get; set; }     //관리자이름
 
-        public string GetMachineType()
+        public string GetMachineType()      //자판기 타입 반환
         {
             return machine.GetMachineType();
         }
@@ -42,8 +42,6 @@ namespace project
                             this.machine.AddItem(item);
                         }
                     }
-
-
                 }
                 else if (machineInfo[0] == "hot")
                 {
@@ -54,7 +52,7 @@ namespace project
                         string[] items = machineInfo[1].Split('$');
                         for (int i = 0; i < items.Length; i++)
                         {
-                            Item item = new ColdItem(items[i]);
+                            Item item = new HotItem(items[i]);
                             this.machine.AddItem(item);
                         }
                     }
@@ -79,21 +77,11 @@ namespace project
                 machine.AddItem(coldItem);
             }
         }
-        //public void RemoveItem(string item, string price, string stock)     //음료, 가격, 재고 삭제
-        //{
-        //    if (machine.GetMachineType() == "hot")      //뜨거운 자판기
-        //    {
-        //        HotItem hotItem = new HotItem(item, price, stock);
-        //        machine.RemoveItem(hotItem);
-        //    }
+        public void RemoveItem(int index)     //삭제
+        {
+            machine.RemoveItem(index);
+        }
 
-        //    else if (machine.GetMachineType() == "cold")        //차가운 자판기
-        //    {
-        //        ColdItem coldItem = new ColdItem(item, price, stock);
-        //        machine.RemoveItem(coldItem);
-        //    }
-
-        //}
         public List<Item> GetItemList()
         {
             return machine.items;

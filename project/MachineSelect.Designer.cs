@@ -1,0 +1,124 @@
+﻿namespace project
+{
+    partial class MachineSelect
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.coldMachinecb = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.hotMachinecb = new System.Windows.Forms.ComboBox();
+            this.SuspendLayout();
+            // 
+            // coldMachinecb
+            // 
+            this.coldMachinecb.FormattingEnabled = true;
+            this.coldMachinecb.Location = new System.Drawing.Point(38, 115);
+            this.coldMachinecb.Name = "coldMachinecb";
+            this.coldMachinecb.Size = new System.Drawing.Size(121, 20);
+            this.coldMachinecb.TabIndex = 0;
+            this.coldMachinecb.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(34, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(290, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "이용할 자판기를 선택해주세요.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 12);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "차가운 음료 자판기";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(38, 191);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(313, 49);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "선택";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(228, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 12);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "뜨거운 음료 자판기";
+            // 
+            // hotMachinecb
+            // 
+            this.hotMachinecb.FormattingEnabled = true;
+            this.hotMachinecb.Location = new System.Drawing.Point(230, 115);
+            this.hotMachinecb.Name = "hotMachinecb";
+            this.hotMachinecb.Size = new System.Drawing.Size(121, 20);
+            this.hotMachinecb.TabIndex = 6;
+            this.hotMachinecb.SelectedIndexChanged += new System.EventHandler(this.hotMachinecb_SelectedIndexChanged);
+            // 
+            // MachineSelect
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Thistle;
+            this.ClientSize = new System.Drawing.Size(422, 273);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.hotMachinecb);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.coldMachinecb);
+            this.Name = "MachineSelect";
+            this.Text = "자판기 선택";
+            this.Load += new System.EventHandler(this.MachineSelect_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ComboBox coldMachinecb;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox hotMachinecb;
+    }
+}

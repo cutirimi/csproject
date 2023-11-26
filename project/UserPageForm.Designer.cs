@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.drinkInfoList = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.modifybtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -46,21 +45,20 @@
             this.label1.Size = new System.Drawing.Size(0, 19);
             this.label1.TabIndex = 0;
             // 
-            // listView1
+            // drinkInfoList
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.drinkInfoList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(44, 100);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(350, 241);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.columnHeader4});
+            this.drinkInfoList.GridLines = true;
+            this.drinkInfoList.HideSelection = false;
+            this.drinkInfoList.Location = new System.Drawing.Point(44, 100);
+            this.drinkInfoList.Name = "drinkInfoList";
+            this.drinkInfoList.Size = new System.Drawing.Size(350, 241);
+            this.drinkInfoList.TabIndex = 2;
+            this.drinkInfoList.UseCompatibleStateImageBehavior = false;
+            this.drinkInfoList.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader2
             // 
@@ -78,12 +76,6 @@
             this.columnHeader4.Text = "재고";
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader4.Width = 80;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "상태";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 80;
             // 
             // modifybtn
             // 
@@ -103,7 +95,7 @@
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(422, 442);
             this.Controls.Add(this.modifybtn);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.drinkInfoList);
             this.Controls.Add(this.label1);
             this.Name = "UserPageForm";
             this.Text = "UserPage";
@@ -116,11 +108,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView drinkInfoList;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button modifybtn;
     }
 }

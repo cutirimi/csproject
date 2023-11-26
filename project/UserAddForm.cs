@@ -1,14 +1,5 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace project
 {
@@ -55,8 +46,7 @@ namespace project
             {
 
                 MessageBox.Show("등록이 완료되었습니다.");
-                FileUtil.signup(name, password , machineType);
-                //admin.FileInput(name, password, machineType);
+                FileUtil.signup(name, password, machineType);
                 this.Hide();
             }
             else

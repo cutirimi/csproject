@@ -157,8 +157,6 @@ namespace project
                 // 임시 파일을 원래 파일로 복사하고 삭제
                 File.Copy(tempFilePath, machineStateTxtPath, true);
                 File.Delete(tempFilePath);
-
-                Console.WriteLine("라인 수정 완료.");
             }
             catch (Exception e)
             {

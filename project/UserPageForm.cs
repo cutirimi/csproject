@@ -1,19 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace project
 {
     public partial class UserPageForm : Form
     {
-        private Admin admin=Admin.GetInstance();
-        Modify modify=new Modify();
+        private Admin admin = Admin.GetInstance();
+        Modify modify = new Modify();
 
         public UserPageForm()
         {
@@ -28,10 +23,25 @@ namespace project
 
         private void UserPage_Load(object sender, EventArgs e)
         {
-            label1.Text = admin.AdminName+ "님 페이지";
+            RenderInfoList();
+
+            label1.Text = admin.AdminName + "님 페이지";
 
             label1.Font = new Font(label1.Font, FontStyle.Bold | FontStyle.Underline);      //폰트 굵기와 밑줄 설정
             label1.Font = new Font(label1.Font.FontFamily, 14);     //폰트 크기 설정
+        }
+
+        private void RenderInfoList()
+        {
+            List<Item> itemList = admin.GetItemList();
+
+            foreach (Item item in itemList)
+            {
+                ListViewItem lvi = new ListViewItem(item.DrinkName);
+                lvi.SubItems.Add(item.Price);
+                lvi.SubItems.Add(item.Stock);
+                drinkInfoList.Items.Add(lvi);
+            }
         }
     }
 }

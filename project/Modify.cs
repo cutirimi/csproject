@@ -7,6 +7,7 @@ namespace project
     public partial class Modify : Form
     {
         private Admin admin = Admin.GetInstance();
+        Machine machine;
 
         private void ClearForm()
         {
@@ -14,13 +15,6 @@ namespace project
             pricetb.Clear();
             stocktb.Clear();
             itemtb.Focus();
-        }
-        public void AddItem(Item item)
-        {
-            string[] items = new string[] { item.DrinkName, item.Price, item.Stock };
-            ListViewItem lvi = new ListViewItem(items);
-            drinklist.Items.Add(lvi);
-            drinklist.EndUpdate();
         }
 
         public Modify()
@@ -55,10 +49,8 @@ namespace project
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
-            if (drinklist.SelectedItems.Count > 0)
-            {
-                drinklist.Items.Remove(drinklist.SelectedItems[0]);
-            }
+            admin.RemoveItem(drinklist.SelectedItems[0].Index);
+            RenderDrinkList();
         }
 
         private void addbtn_Click(object sender, EventArgs e)
@@ -73,18 +65,7 @@ namespace project
             RenderDrinkList();
         }
 
-        private void drinklist_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (drinklist.SelectedItems.Count > 0)
-            {
-                itemtb.Text = drinklist.SelectedItems[0].SubItems[0].Text;
-                pricetb.Text = drinklist.SelectedItems[0].SubItems[1].Text;
-                stocktb.Text = drinklist.SelectedItems[0].SubItems[2].Text;
-            }
-            ClearForm();
-        }
-
-        private void RenderDrinkList()
+        public void RenderDrinkList()
         {
             drinklist.Items.Clear();
             List<Item> itemList = admin.GetItemList();

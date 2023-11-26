@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileUtil.cs" />
+    <Compile Include="MachineSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineSelect.Designer.cs">
+      <DependentUpon>MachineSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     <Compile Include="UserPageForm.Designer.cs">
       <DependentUpon>UserPageForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MachineSelect.resx">
+      <DependentUpon>MachineSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.LinkLabel;
-using project;
 
 namespace project
 {
@@ -37,16 +28,10 @@ namespace project
             txtprice5.Text = machine1.price[4];
             txtdrink6.Text = machine1.drink[5];
             txtprice6.Text = machine1.price[5];
-            txtdrink7.Text = machine1.drink[6];
-            txtprice7.Text = machine1.price[6];
-            txtdrink8.Text = machine1.drink[7];
-            txtprice8.Text = machine1.price[7];
-            txtdrink9.Text = machine1.drink[8];
-            txtprice9.Text = machine1.price[8];
         }
         protected void selectedindex(int index)
         {
-            if(index>=0&&index<machine1.drink.Count)
+            if (index >= 0 && index < machine1.drink.Count)
             {
                 txtdrinkselect.Text = machine1.drink[index];
                 txtpriceselect.Text = machine1.price[index];
