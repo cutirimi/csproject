@@ -28,12 +28,18 @@ namespace project
             coldMachinecb.Items.Clear();
             hotMachinecb.Items.Clear();
 
-            List<string> adminNames = FindAdminNamesByAdminFile();
+            List<string> machineTypes = FindMachineTypesByMachineFile();
 
-            foreach (string adminName in adminNames)
+            foreach (string machineType in machineTypes)
             {
-                coldMachinecb.Items.Add(adminName);
-                hotMachinecb.Items.Add(adminName);
+                if (machineType.Contains("차가운"))
+                {
+                    coldMachinecb.Items.Add(machineType);
+                }
+                else if (machineType.Contains("뜨거운"))
+                {
+                    hotMachinecb.Items.Add(machineType);
+                }
             }
         }
 
@@ -44,27 +50,40 @@ namespace project
             this.Close();
         }
 
-        private List<string> FindAdminNamesByAdminFile()
+        private List<string> FindMachineTypesByMachineFile()        //MachineState텍스트 파일에서 자판기 타입을 string 리스트 형태로 반환
         {
-            List<string> adminNames = new List<string>();
+            List<string> machinesTypes = new List<string>();
 
-            FileStream fs = File.OpenRead("Admin.txt");
+            FileStream fs = File.OpenRead("MachineState.txt");
             StreamReader sr = new StreamReader(fs);
+
+            int coldCount = 1;
+            int hotCount = 1;
 
             while (!sr.EndOfStream)
             {
                 string line = sr.ReadLine();
-                string[] userInfo = line.Split('$');
+                string[] machineType = line.Split(':');
 
-                if (userInfo.Length >= 1 && !string.IsNullOrWhiteSpace(userInfo[0]))
+                if (machineType.Length >= 1 && !string.IsNullOrWhiteSpace(machineType[0]))
                 {
-                    adminNames.Add(userInfo[0]);
+                    //machinesTypes.Add(machineType[0]);
+                    if (machineType[0] == "cold")
+                    {
+                        machinesTypes.Add("차가운 음료 자판기" + coldCount);
+                        coldCount++;
+                    }
+                    else if (machineType[0] == "hot")
+                    {
+                        machinesTypes.Add("뜨거운 음료 자판기" + hotCount);
+                        hotCount++;
+                    }
                 }
             }
             sr.Close();
             fs.Close();
 
-            return adminNames;
+            return machinesTypes;
         }
     }
 }
