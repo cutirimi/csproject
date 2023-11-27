@@ -50,7 +50,7 @@ namespace project
             this.Close();
         }
 
-        private List<string> FindMachineTypesByMachineFile()        //MachineState텍스트 파일에서 자판기 타입을 string 리스트 형태로 반환
+        private List<string> FindMachineTypesByMachineFile()        //MachineState텍스트 파일에서 자판기 타입 읽고, 콤보박스에 들어갈 내용 리스트 형태로 저장
         {
             List<string> machinesTypes = new List<string>();
 
@@ -67,7 +67,6 @@ namespace project
 
                 if (machineType.Length >= 1 && !string.IsNullOrWhiteSpace(machineType[0]))
                 {
-                    //machinesTypes.Add(machineType[0]);
                     if (machineType[0] == "cold")
                     {
                         machinesTypes.Add("차가운 음료 자판기" + coldCount);
