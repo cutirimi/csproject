@@ -194,5 +194,32 @@ namespace project
             }
             return null;
         }
+
+        public static List<string> FindMachineTypesByMachineFile()        //MachineState텍스트 파일에서 자판기 타입 읽고, 콤보박스에 들어갈 내용 리스트 형태로 저장
+        {
+            List<string> machinesTypes = new List<string>();
+
+            FileStream fs = File.OpenRead("MachineState.txt");
+            StreamReader sr = new StreamReader(fs);
+
+            int coldCount = 1;
+            int hotCount = 1;
+
+            while (!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                string[] machineType = line.Split(':');
+
+                if (machineType.Length >= 1 && !string.IsNullOrWhiteSpace(machineType[0]))
+                {
+                    machinesTypes.Add("자판기" + coldCount);
+                    coldCount++;
+                }
+            }
+            sr.Close();
+            fs.Close();
+
+            return machinesTypes;
+        }
     }
 }
