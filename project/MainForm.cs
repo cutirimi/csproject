@@ -25,5 +25,10 @@ namespace project
             //사용자 폼 만들고 기능 추가
             machineSelect.Show();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

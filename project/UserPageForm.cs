@@ -25,7 +25,13 @@ namespace project
         {
             RenderInfoList();
 
+            ListViewItem lvi = new ListViewItem();
+
             label1.Text = admin.AdminName + "님 페이지";
+
+            string stockText = admin.GetMachineType() == "hot" ? "재고(g)" : "재고(개)";
+
+            drinkInfoList.Columns[2].Text = stockText;
 
             label1.Font = new Font(label1.Font, FontStyle.Bold | FontStyle.Underline);      //폰트 굵기와 밑줄 설정
             label1.Font = new Font(label1.Font.FontFamily, 14);     //폰트 크기 설정

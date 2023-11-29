@@ -2,7 +2,7 @@
 
 namespace project
 {
-    public abstract class Machine       //베이스클래스
+    public abstract class Machine       //추상클래스. 베이스클래스
     {
         public List<Item> items;
 

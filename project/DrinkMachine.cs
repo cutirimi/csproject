@@ -5,7 +5,7 @@ namespace project
 {
     public partial class DrinkMachine : Form
     {
-        Machine1 machine1 = new Machine1();
+        //Machine1 machine1 = new Machine1();
 
         public DrinkMachine()
         {
@@ -16,27 +16,27 @@ namespace project
         {
             button10.Visible = false;
 
-            txtdrink1.Text = machine1.drink[0];
-            txtprice1.Text = machine1.price[0];
-            txtdrink2.Text = machine1.drink[1];
-            txtprice2.Text = machine1.price[1];
-            txtdrink3.Text = machine1.drink[2];
-            txtprice3.Text = machine1.price[2];
-            txtdrink4.Text = machine1.drink[3];
-            txtprice4.Text = machine1.price[3];
-            txtdrink5.Text = machine1.drink[4];
-            txtprice5.Text = machine1.price[4];
-            txtdrink6.Text = machine1.drink[5];
-            txtprice6.Text = machine1.price[5];
+            //txtdrink1.Text = machine1.drink[0];
+            //txtprice1.Text = machine1.price[0];
+            //txtdrink2.Text = machine1.drink[1];
+            //txtprice2.Text = machine1.price[1];
+            //txtdrink3.Text = machine1.drink[2];
+            //txtprice3.Text = machine1.price[2];
+            //txtdrink4.Text = machine1.drink[3];
+            //txtprice4.Text = machine1.price[3];
+            //txtdrink5.Text = machine1.drink[4];
+            //txtprice5.Text = machine1.price[4];
+            //txtdrink6.Text = machine1.drink[5];
+            //txtprice6.Text = machine1.price[5];
         }
         protected void selectedindex(int index)
         {
-            if (index >= 0 && index < machine1.drink.Count)
-            {
-                txtdrinkselect.Text = machine1.drink[index];
-                txtpriceselect.Text = machine1.price[index];
-            }
-            button10.Visible = true;
+            //if (index >= 0 && index < machine1.drink.Count)
+            //{
+            //    txtdrinkselect.Text = machine1.drink[index];
+            //    txtpriceselect.Text = machine1.price[index];
+            //}
+            //button10.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -80,7 +80,6 @@ namespace project
 
         }
 
-
         public static int FindMachineIndexByUser(string name, string password)       //사용자 찾는 메소드
         {
 
@@ -202,8 +201,7 @@ namespace project
             FileStream fs = File.OpenRead("MachineState.txt");
             StreamReader sr = new StreamReader(fs);
 
-            int coldCount = 1;
-            int hotCount = 1;
+            int Count = 1;
 
             while (!sr.EndOfStream)
             {
@@ -212,8 +210,8 @@ namespace project
 
                 if (machineType.Length >= 1 && !string.IsNullOrWhiteSpace(machineType[0]))
                 {
-                    machinesTypes.Add("자판기" + coldCount);
-                    coldCount++;
+                    machinesTypes.Add("자판기" + Count);
+                    Count++;
                 }
             }
             sr.Close();
