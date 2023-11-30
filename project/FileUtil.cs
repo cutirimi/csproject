@@ -38,7 +38,6 @@ namespace project
             }
 
             // admin 파일에 저장
-
             StreamWriter sw = null;
             try
             {
@@ -218,6 +217,38 @@ namespace project
             fs.Close();
 
             return machinesTypes;
+        }
+
+        public static List<string> FindDrinksByMachineFile()        //MachineState텍스트 파일에서 음료품목을 읽기
+        {
+            List<string> drinks = new List<string>();
+
+            FileStream fs = File.OpenRead("MachineState.txt");
+            StreamReader sr = new StreamReader(fs);
+
+            while (!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                string[] machineType = line.Split(':');
+
+                if (machineType.Length >= 2 && !string.IsNullOrWhiteSpace(machineType[0]))
+                {
+                    string[] drinksInfo = machineType[1].Split('$');
+
+                    foreach (string drinkInfo in drinksInfo)
+                    {
+                        string[] drinkDetails = drinkInfo.Split('#');       //각 음료 정보에서 음료 품목만 추출
+                        if (drinkDetails.Length >= 1)
+                        {
+                            drinks.Add(drinkDetails[0]);
+                        }
+                    }
+                }
+                //sr.Close();
+                //fs.Close();
+
+            }
+            return drinks;
         }
     }
 }
