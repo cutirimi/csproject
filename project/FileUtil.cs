@@ -195,12 +195,11 @@ namespace project
 
         public static List<string> FindMachineTypesByMachineFile()        //MachineState텍스트 파일에서 자판기 타입 읽고, 콤보박스에 들어갈 내용 리스트 형태로 저장
         {
-            List<string> machinesTypes = new List<string>();
+            List<string> machineStateList = new List<string>();
 
             FileStream fs = File.OpenRead("MachineState.txt");
-            StreamReader sr = new StreamReader(fs);
+            StreamReader sr = new StreamReader(fs, System.Text.Encoding.Default);
 
-            int Count = 1;
 
             while (!sr.EndOfStream)
             {
@@ -209,14 +208,13 @@ namespace project
 
                 if (machineType.Length >= 1 && !string.IsNullOrWhiteSpace(machineType[0]))
                 {
-                    machinesTypes.Add("자판기" + Count);
-                    Count++;
+                    machineStateList.Add(line);
                 }
             }
             sr.Close();
             fs.Close();
 
-            return machinesTypes;
+            return machineStateList;
         }
 
         public static List<string> FindDrinksByMachineFile()        //MachineState텍스트 파일에서 음료품목을 읽기

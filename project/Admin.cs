@@ -32,30 +32,11 @@ namespace project
                 string[] machineInfo = machineState.Split(':');
                 if (machineInfo[0] == "cold")
                 {
-                    this.machine = new ColdMachine();
-                    if (machineInfo[1].Length != 0)
-                    {
-                        string[] items = machineInfo[1].Split('$');
-                        for (int i = 0; i < items.Length; i++)
-                        {
-                            Item item = new ColdItem(items[i]);
-                            this.machine.AddItem(item);
-                        }
-                    }
+                    this.machine = new ColdMachine(machineInfo[1]);
                 }
                 else if (machineInfo[0] == "hot")
                 {
-                    this.machine = new HotMachine();
-
-                    if (machineInfo[1].Length != 0)
-                    {
-                        string[] items = machineInfo[1].Split('$');
-                        for (int i = 0; i < items.Length; i++)
-                        {
-                            Item item = new HotItem(items[i]);
-                            this.machine.AddItem(item);
-                        }
-                    }
+                    this.machine = new HotMachine(machineInfo[1]);
                 }
             }
             else
