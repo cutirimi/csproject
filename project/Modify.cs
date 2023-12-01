@@ -37,12 +37,12 @@ namespace project
             ClearForm();
             RenderDrinkList();
 
-            if (drinklist.Items.Count == 6)
-            {
-                MessageBox.Show("더이상 추가하실 수 없습니다.");
-                addbtn.Enabled = false;
-                return;
-            }
+            //if (drinklist.Items.Count == 6)
+            //{
+            //    MessageBox.Show("더이상 추가하실 수 없습니다.");
+            //    addbtn.Enabled = false;
+            //    return;
+            //}
         }
 
         private void movebtn_Click(object sender, EventArgs e)
@@ -70,6 +70,18 @@ namespace project
 
             ClearForm();
             RenderDrinkList();
+
+            try
+            {
+                if (drinklist.Items.Count > 6)
+                {
+                    throw new CustomException("더이상 추가하실 수 없습니다.");
+                }
+            }
+            catch (CustomException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void RenderDrinkList()

@@ -134,19 +134,16 @@ namespace project
 
                 if (currentStock > 0)
                 {
-                    if (currentStock % 50 == 0)
+                    if (currentStock > 50)
                     {
                         currentStock -= 50;
-                        selectedItem.Stock = currentStock.ToString();       //변경된 재고 업데이트
-                        FileUtil.StoreMachineStateByIndex(selectedIndex + 1, selectedMachine);      //변경된 상태 저장
                     }
                     else
                     {
                         currentStock--;
-                        selectedItem.Stock = currentStock.ToString();       //변경된 재고 업데이트
-                        FileUtil.StoreMachineStateByIndex(selectedIndex + 1, selectedMachine);      //변경된 상태 저장
                     }
-
+                    selectedItem.Stock = currentStock.ToString();       //변경된 재고 업데이트
+                    FileUtil.StoreMachineStateByIndex(selectedIndex + 1, selectedMachine);      //변경된 상태 저장
                 }
                 else
                 {
