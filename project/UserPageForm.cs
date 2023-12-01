@@ -49,5 +49,12 @@ namespace project
                 drinkInfoList.Items.Add(lvi);
             }
         }
+
+        private void logoutbtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+        }
     }
 }

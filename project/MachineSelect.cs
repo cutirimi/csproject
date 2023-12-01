@@ -76,7 +76,17 @@ namespace project
 
         private void button10_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("구매완료");
+            if (txtpriceselect.Text == "")
+            {
+                MessageBox.Show("선택하실 수 없습니다.");
+            }
+            else
+            {
+                MessageBox.Show("구매완료");
+            }
+
+            stockCheck();
+
             txtpriceselect.Text = "";
             txtdrinkselect.Text = "";
         }
@@ -86,26 +96,61 @@ namespace project
             int selectedIndex = machineListBox.SelectedIndex;
 
             this.selectedMachine = machines[selectedIndex];
+
             Render();
         }
 
-        private void Render()
+        private void Render()       //자판기 text설정
         {
-            List<Label> textList = new List<Label>() { txtdrink1, txtdrink2, txtdrink3, txtdrink4, txtdrink5, txtdrink6 };
+            List<Label> textDrinkList = new List<Label>() { txtdrink1, txtdrink2, txtdrink3, txtdrink4, txtdrink5, txtdrink6 };
             List<Label> textPriceList = new List<Label>() { txtprice1, txtprice2, txtprice3, txtprice4, txtprice5, txtprice6 };
 
-            for (int i = 0; i < selectedMachine.items.Count; i++)
+            for (int i = 0; i < textDrinkList.Count; i++)
             {
-                if (selectedMachine.items[i].DrinkName != null && selectedMachine.items[i].Price != null)
+                if (i < selectedMachine.items.Count)
                 {
-                    textList[i].Text = selectedMachine.items[i].DrinkName;
-                    textPriceList[i].Text = selectedMachine.items[i].Price;
+                    if (selectedMachine.items[i].DrinkName != null && selectedMachine.items[i].Price != null)
+                    {
+                        textDrinkList[i].Text = selectedMachine.items[i].DrinkName;
+                        textPriceList[i].Text = selectedMachine.items[i].Price;
+                    }
                 }
                 else
                 {
-                    textList[i].Text = "비어있음";
-                    textPriceList[i].Text = "비어있음";
-                    button10.Enabled = false;
+                    textDrinkList[i].Text = "비어있음";
+                    textPriceList[i].Text = "";
+                }
+            }
+        }
+
+        private void stockCheck()       //재고 감소
+        {
+            int selectedIndex = machineListBox.SelectedIndex;
+
+            if (selectedIndex >= 0 && selectedIndex < selectedMachine.items.Count)
+            {
+                Item selectedItem = selectedMachine.items[selectedIndex];
+                int currentStock = Convert.ToInt32(selectedItem.Stock);
+
+                if (currentStock > 0)
+                {
+                    if (currentStock % 50 == 0)
+                    {
+                        currentStock -= 50;
+                        selectedItem.Stock = currentStock.ToString();       //변경된 재고 업데이트
+                        FileUtil.StoreMachineStateByIndex(selectedIndex + 1, selectedMachine);      //변경된 상태 저장
+                    }
+                    else
+                    {
+                        currentStock--;
+                        selectedItem.Stock = currentStock.ToString();       //변경된 재고 업데이트
+                        FileUtil.StoreMachineStateByIndex(selectedIndex + 1, selectedMachine);      //변경된 상태 저장
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("재고가 부족합니다.");
                 }
             }
         }

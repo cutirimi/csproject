@@ -9,7 +9,7 @@ namespace project
         const string adminTxtPath = "Admin.txt";
         const string machineStateTxtPath = "MachineState.txt";
 
-        public static void signup(string username, string password, string machineType)
+        public static void signup(string username, string password, string machineType)     //관리자명, 비밀번호, 자판기타입 파일처리(Reader, Writer)
         {
 
             // 마지막 index 찾는 코드
@@ -79,7 +79,7 @@ namespace project
 
         }
 
-        public static int FindMachineIndexByUser(string name, string password)       //사용자 찾는 메소드
+        public static int FindMachineIndexByUser(string name, string password)       //관리자명과 비밀번호로 Admin.txt파일에서 사용자 찾는 메소드
         {
 
             StreamReader sr = null;
@@ -116,7 +116,7 @@ namespace project
         }
 
 
-        public static void StoreMachineStateByIndex(int index, Machine machine)     //인덱스로 MachineState텍스트 파일에 쓰기
+        public static void StoreMachineStateByIndex(int index, Machine machine)     //인덱스로 MachineState.txt 파일에 쓰기
         {
             try
             {
@@ -161,7 +161,8 @@ namespace project
                 Console.WriteLine("오류 발생: " + e.Message);
             }
         }
-        public static string GetMachineStateByIndex(int index)      //인덱스로 파일 내용 읽기
+
+        public static string GetMachineStateByIndex(int index)      //인덱스로 MachineState.txt파일 내용 읽기
         {
 
             StreamReader sr = null;
@@ -193,7 +194,7 @@ namespace project
             return null;
         }
 
-        public static List<string> FindMachineTypesByMachineFile()        //MachineState텍스트 파일에서 자판기 타입 읽고, 콤보박스에 들어갈 내용 리스트 형태로 저장
+        public static List<string> FindMachineTypesByMachineFile()        //MachineState.txt 파일에서 자판기 타입 읽고, 콤보박스에 들어갈 내용 리스트 형태로 저장
         {
             List<string> machineStateList = new List<string>();
 
@@ -215,38 +216,6 @@ namespace project
             fs.Close();
 
             return machineStateList;
-        }
-
-        public static List<string> FindDrinksByMachineFile()        //MachineState텍스트 파일에서 음료품목을 읽기
-        {
-            List<string> drinks = new List<string>();
-
-            FileStream fs = File.OpenRead("MachineState.txt");
-            StreamReader sr = new StreamReader(fs);
-
-            while (!sr.EndOfStream)
-            {
-                string line = sr.ReadLine();
-                string[] machineType = line.Split(':');
-
-                if (machineType.Length >= 2 && !string.IsNullOrWhiteSpace(machineType[0]))
-                {
-                    string[] drinksInfo = machineType[1].Split('$');
-
-                    foreach (string drinkInfo in drinksInfo)
-                    {
-                        string[] drinkDetails = drinkInfo.Split('#');       //각 음료 정보에서 음료 품목만 추출
-                        if (drinkDetails.Length >= 1)
-                        {
-                            drinks.Add(drinkDetails[0]);
-                        }
-                    }
-                }
-                //sr.Close();
-                //fs.Close();
-
-            }
-            return drinks;
         }
     }
 }

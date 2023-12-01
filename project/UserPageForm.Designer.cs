@@ -34,6 +34,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.modifybtn = new System.Windows.Forms.Button();
+            this.logoutbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -88,12 +89,23 @@
             this.modifybtn.UseVisualStyleBackColor = false;
             this.modifybtn.Click += new System.EventHandler(this.modifybtn_Click);
             // 
+            // logoutbtn
+            // 
+            this.logoutbtn.Location = new System.Drawing.Point(319, 12);
+            this.logoutbtn.Name = "logoutbtn";
+            this.logoutbtn.Size = new System.Drawing.Size(75, 23);
+            this.logoutbtn.TabIndex = 4;
+            this.logoutbtn.Text = "로그아웃";
+            this.logoutbtn.UseVisualStyleBackColor = true;
+            this.logoutbtn.Click += new System.EventHandler(this.logoutbtn_Click);
+            // 
             // UserPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(422, 442);
+            this.Controls.Add(this.logoutbtn);
             this.Controls.Add(this.modifybtn);
             this.Controls.Add(this.drinkInfoList);
             this.Controls.Add(this.label1);
@@ -113,5 +125,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button modifybtn;
+        private System.Windows.Forms.Button logoutbtn;
     }
 }
