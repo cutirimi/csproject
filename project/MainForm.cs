@@ -12,23 +12,28 @@ namespace project
         public MainForm()
         {
             InitializeComponent();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             loginForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //사용자 폼 만들고 기능 추가
+            this.Hide();
             machineSelect.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

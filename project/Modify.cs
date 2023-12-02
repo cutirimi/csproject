@@ -37,12 +37,22 @@ namespace project
             ClearForm();
             RenderDrinkList();
 
-            //if (drinklist.Items.Count == 6)
-            //{
-            //    MessageBox.Show("더이상 추가하실 수 없습니다.");
-            //    addbtn.Enabled = false;
-            //    return;
-            //}
+            try
+            {
+                if (drinklist.Items.Count >= 6)      //리스트박스의 항목이 6개를 초과할 경우 CustomException 발생시켜 사용자 정의 예외 발생
+                {
+                    addbtn.Enabled = false;
+                    throw new CustomException("더이상 추가하실 수 없습니다.");
+                }
+                else
+                {
+                    addbtn.Enabled = true;
+                }
+            }
+            catch (CustomException ex)      //발생한 예외 catch
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void movebtn_Click(object sender, EventArgs e)
@@ -51,7 +61,6 @@ namespace project
             userPageForm.Show();
             admin.SaveMachine();
             this.Close();
-
         }
 
         private void deletebtn_Click(object sender, EventArgs e)
@@ -70,18 +79,6 @@ namespace project
 
             ClearForm();
             RenderDrinkList();
-
-            try
-            {
-                if (drinklist.Items.Count > 6)
-                {
-                    throw new CustomException("더이상 추가하실 수 없습니다.");
-                }
-            }
-            catch (CustomException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         public void RenderDrinkList()

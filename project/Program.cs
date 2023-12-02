@@ -11,15 +11,6 @@ namespace project
         [STAThread]
         static void Main()
         {
-            //try
-            //{
-            //    throw new CustomException1 ("");
-            //}
-            //catch (Exception e)
-            //{
-            //    e.HandleError();
-            //}
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());     //Form1이 항상 기본 실행

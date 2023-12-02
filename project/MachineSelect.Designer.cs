@@ -60,6 +60,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -83,7 +84,7 @@
             // txtprice1
             // 
             this.txtprice1.AutoSize = true;
-            this.txtprice1.Location = new System.Drawing.Point(169, 134);
+            this.txtprice1.Location = new System.Drawing.Point(175, 134);
             this.txtprice1.Name = "txtprice1";
             this.txtprice1.Size = new System.Drawing.Size(0, 12);
             this.txtprice1.TabIndex = 48;
@@ -92,7 +93,7 @@
             // txtdrink1
             // 
             this.txtdrink1.AutoSize = true;
-            this.txtdrink1.Location = new System.Drawing.Point(163, 122);
+            this.txtdrink1.Location = new System.Drawing.Point(169, 122);
             this.txtdrink1.Name = "txtdrink1";
             this.txtdrink1.Size = new System.Drawing.Size(0, 12);
             this.txtdrink1.TabIndex = 46;
@@ -112,7 +113,7 @@
             // txtprice2
             // 
             this.txtprice2.AutoSize = true;
-            this.txtprice2.Location = new System.Drawing.Point(258, 134);
+            this.txtprice2.Location = new System.Drawing.Point(264, 134);
             this.txtprice2.Name = "txtprice2";
             this.txtprice2.Size = new System.Drawing.Size(0, 12);
             this.txtprice2.TabIndex = 52;
@@ -121,7 +122,7 @@
             // txtdrink2
             // 
             this.txtdrink2.AutoSize = true;
-            this.txtdrink2.Location = new System.Drawing.Point(252, 122);
+            this.txtdrink2.Location = new System.Drawing.Point(258, 122);
             this.txtdrink2.Name = "txtdrink2";
             this.txtdrink2.Size = new System.Drawing.Size(0, 12);
             this.txtdrink2.TabIndex = 51;
@@ -141,7 +142,7 @@
             // txtprice3
             // 
             this.txtprice3.AutoSize = true;
-            this.txtprice3.Location = new System.Drawing.Point(340, 134);
+            this.txtprice3.Location = new System.Drawing.Point(345, 134);
             this.txtprice3.Name = "txtprice3";
             this.txtprice3.Size = new System.Drawing.Size(0, 12);
             this.txtprice3.TabIndex = 56;
@@ -150,7 +151,7 @@
             // txtdrink3
             // 
             this.txtdrink3.AutoSize = true;
-            this.txtdrink3.Location = new System.Drawing.Point(334, 122);
+            this.txtdrink3.Location = new System.Drawing.Point(339, 122);
             this.txtdrink3.Name = "txtdrink3";
             this.txtdrink3.Size = new System.Drawing.Size(0, 12);
             this.txtdrink3.TabIndex = 55;
@@ -170,7 +171,7 @@
             // txtprice6
             // 
             this.txtprice6.AutoSize = true;
-            this.txtprice6.Location = new System.Drawing.Point(340, 263);
+            this.txtprice6.Location = new System.Drawing.Point(345, 263);
             this.txtprice6.Name = "txtprice6";
             this.txtprice6.Size = new System.Drawing.Size(0, 12);
             this.txtprice6.TabIndex = 68;
@@ -179,7 +180,7 @@
             // txtdrink6
             // 
             this.txtdrink6.AutoSize = true;
-            this.txtdrink6.Location = new System.Drawing.Point(334, 251);
+            this.txtdrink6.Location = new System.Drawing.Point(339, 251);
             this.txtdrink6.Name = "txtdrink6";
             this.txtdrink6.Size = new System.Drawing.Size(0, 12);
             this.txtdrink6.TabIndex = 67;
@@ -199,7 +200,7 @@
             // txtprice5
             // 
             this.txtprice5.AutoSize = true;
-            this.txtprice5.Location = new System.Drawing.Point(258, 263);
+            this.txtprice5.Location = new System.Drawing.Point(263, 263);
             this.txtprice5.Name = "txtprice5";
             this.txtprice5.Size = new System.Drawing.Size(0, 12);
             this.txtprice5.TabIndex = 64;
@@ -208,7 +209,7 @@
             // txtdrink5
             // 
             this.txtdrink5.AutoSize = true;
-            this.txtdrink5.Location = new System.Drawing.Point(252, 251);
+            this.txtdrink5.Location = new System.Drawing.Point(257, 251);
             this.txtdrink5.Name = "txtdrink5";
             this.txtdrink5.Size = new System.Drawing.Size(0, 12);
             this.txtdrink5.TabIndex = 63;
@@ -228,7 +229,7 @@
             // txtprice4
             // 
             this.txtprice4.AutoSize = true;
-            this.txtprice4.Location = new System.Drawing.Point(169, 263);
+            this.txtprice4.Location = new System.Drawing.Point(174, 263);
             this.txtprice4.Name = "txtprice4";
             this.txtprice4.Size = new System.Drawing.Size(0, 12);
             this.txtprice4.TabIndex = 60;
@@ -237,7 +238,7 @@
             // txtdrink4
             // 
             this.txtdrink4.AutoSize = true;
-            this.txtdrink4.Location = new System.Drawing.Point(163, 251);
+            this.txtdrink4.Location = new System.Drawing.Point(168, 251);
             this.txtdrink4.Name = "txtdrink4";
             this.txtdrink4.Size = new System.Drawing.Size(0, 12);
             this.txtdrink4.TabIndex = 59;
@@ -356,12 +357,23 @@
             this.pictureBox4.TabIndex = 78;
             this.pictureBox4.TabStop = false;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(354, 9);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(62, 23);
+            this.button7.TabIndex = 79;
+            this.button7.Text = "메인홈";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // MachineSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(422, 442);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox3);
@@ -437,5 +449,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button button7;
     }
 }
