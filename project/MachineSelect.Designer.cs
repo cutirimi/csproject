@@ -42,17 +42,13 @@
             this.button3 = new System.Windows.Forms.Button();
             this.txtprice6 = new System.Windows.Forms.Label();
             this.txtdrink6 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.txtprice5 = new System.Windows.Forms.Label();
             this.txtdrink5 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.txtprice4 = new System.Windows.Forms.Label();
             this.txtdrink4 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.txtpriceselect = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtdrinkselect = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -186,16 +182,16 @@
             this.txtdrink6.TabIndex = 67;
             this.txtdrink6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button4
+            // button6
             // 
-            this.button4.Location = new System.Drawing.Point(342, 279);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(44, 22);
-            this.button4.TabIndex = 65;
-            this.button4.Text = "선택";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button6.Location = new System.Drawing.Point(342, 279);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(44, 22);
+            this.button6.TabIndex = 65;
+            this.button6.Text = "선택";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // txtprice5
             // 
@@ -244,52 +240,16 @@
             this.txtdrink4.TabIndex = 59;
             this.txtdrink4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button6
+            // button4
             // 
-            this.button6.Location = new System.Drawing.Point(171, 279);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(44, 22);
-            this.button6.TabIndex = 57;
-            this.button6.Text = "선택";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // txtpriceselect
-            // 
-            this.txtpriceselect.AutoSize = true;
-            this.txtpriceselect.Location = new System.Drawing.Point(277, 368);
-            this.txtpriceselect.Name = "txtpriceselect";
-            this.txtpriceselect.Size = new System.Drawing.Size(0, 12);
-            this.txtpriceselect.TabIndex = 72;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(342, 362);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(44, 20);
-            this.button10.TabIndex = 71;
-            this.button10.Text = "구매";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(169, 350);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 12);
-            this.label11.TabIndex = 70;
-            this.label11.Text = "음료확인";
-            // 
-            // txtdrinkselect
-            // 
-            this.txtdrinkselect.AutoSize = true;
-            this.txtdrinkselect.Location = new System.Drawing.Point(169, 370);
-            this.txtdrinkselect.Name = "txtdrinkselect";
-            this.txtdrinkselect.Size = new System.Drawing.Size(0, 12);
-            this.txtdrinkselect.TabIndex = 69;
+            this.button4.Location = new System.Drawing.Point(171, 279);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(44, 22);
+            this.button4.TabIndex = 57;
+            this.button4.Text = "선택";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // imageList1
             // 
@@ -380,19 +340,15 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.txtpriceselect);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtdrinkselect);
             this.Controls.Add(this.txtprice6);
             this.Controls.Add(this.txtdrink6);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.txtprice5);
             this.Controls.Add(this.txtdrink5);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.txtprice4);
             this.Controls.Add(this.txtdrink4);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.txtprice3);
             this.Controls.Add(this.txtdrink3);
             this.Controls.Add(this.button3);
@@ -405,6 +361,7 @@
             this.Controls.Add(this.machineListBox);
             this.Name = "MachineSelect";
             this.Text = "자판기 선택";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MachineSelect_FormClosing);
             this.Load += new System.EventHandler(this.MachineSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -431,17 +388,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label txtprice6;
         private System.Windows.Forms.Label txtdrink6;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label txtprice5;
         private System.Windows.Forms.Label txtdrink5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label txtprice4;
         private System.Windows.Forms.Label txtdrink4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label txtpriceselect;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label txtdrinkselect;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox1;

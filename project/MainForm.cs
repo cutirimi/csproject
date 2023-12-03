@@ -16,19 +16,16 @@ namespace project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             loginForm.Show();
+            this.Hide();
+            // loginForm.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //machineSelect.ShowDialog();
             machineSelect.Show();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)

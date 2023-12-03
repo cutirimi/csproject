@@ -39,10 +39,6 @@ namespace project
                     this.machine = new HotMachine(machineInfo[1]);
                 }
             }
-            else
-            {
-
-            }
         }
         public void AddItem(string item, string price, string stock)        //음료, 가격, 재고 추가
         {

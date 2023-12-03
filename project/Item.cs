@@ -25,17 +25,47 @@
 
     class HotItem : Item
     {
+        public HotItem() { }
         public HotItem(string drinkName, string price, string stock) : base(drinkName, price, stock) { }
-        public HotItem(string unsplitedItem) : base(unsplitedItem)
+        public HotItem(string unsplitedItem) : base(unsplitedItem) { }
+        public static HotItem operator -(HotItem item, int amount)
         {
+            int stock = int.Parse(item.Stock);
+
+            if (stock > 0)
+            {
+                stock -= amount;
+                item.Stock = stock.ToString();
+            }
+            else
+            {
+                throw new CustomException("재고없음");
+            }
+
+            return item;
         }
     }
     class ColdItem : Item
     {
+        public ColdItem() { }
         public ColdItem(string drinkName, string price, string stock) : base(drinkName, price, stock) { }
 
-        public ColdItem(string unsplitedItem) : base(unsplitedItem)
+        public ColdItem(string unsplitedItem) : base(unsplitedItem) { }
+        public static ColdItem operator -(ColdItem item, int amount)
         {
+            int stock = int.Parse(item.Stock);
+
+            if (stock > 0)
+            {
+                stock -= amount;
+                item.Stock = stock.ToString();
+            }
+            else
+            {
+                throw new CustomException("재고없음");
+            }
+
+            return item;
         }
     }
 }

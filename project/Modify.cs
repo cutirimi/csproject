@@ -37,21 +37,9 @@ namespace project
             ClearForm();
             RenderDrinkList();
 
-            try
+            if (drinklist.Items.Count >= 6)
             {
-                if (drinklist.Items.Count >= 6)      //리스트박스의 항목이 6개를 초과할 경우 CustomException 발생시켜 사용자 정의 예외 발생
-                {
-                    addbtn.Enabled = false;
-                    throw new CustomException("더이상 추가하실 수 없습니다.");
-                }
-                else
-                {
-                    addbtn.Enabled = true;
-                }
-            }
-            catch (CustomException ex)      //발생한 예외 catch
-            {
-                MessageBox.Show(ex.Message);
+                addbtn.Enabled = false;
             }
         }
 
@@ -67,6 +55,16 @@ namespace project
         {
             admin.RemoveItem(drinklist.SelectedItems[0].Index);
             RenderDrinkList();
+
+            if (drinklist.Items.Count < 6)
+            {
+                addbtn.Enabled = true;
+            }
+            else
+            {
+                addbtn.Enabled = false;
+
+            }
         }
 
         private void addbtn_Click(object sender, EventArgs e)
@@ -75,10 +73,40 @@ namespace project
             string price = pricetb.Text;
             string stock = stocktb.Text;
 
-            admin.AddItem(drinkName, price, stock);
+            try
+            {
+                if (admin.GetMachineType() == "hot")
+                {
+                    if (int.Parse(stock) < 50)
+                    {
+                        throw new CustomException("최소 50g 이상 넣어주세요.");
+                    }
+                }
+                else if (admin.GetMachineType() == "cold")
+                {
+                    if (int.Parse(stock) > 15)
+                    {
+                        throw new CustomException("재고는 최대 15개까지입니다.");
+                    }
+                }
 
-            ClearForm();
-            RenderDrinkList();
+                admin.AddItem(drinkName, price, stock);     //예외가 발생하지 않았을 때만 항목 추가
+                ClearForm();
+                RenderDrinkList();
+
+                if (drinklist.Items.Count < 6)
+                {
+                    addbtn.Enabled = true;
+                }
+                else
+                {
+                    addbtn.Enabled = false;
+                }
+            }
+            catch (CustomException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void RenderDrinkList()

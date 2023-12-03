@@ -14,33 +14,7 @@ namespace project
         public void AddItem(Item item) { items.Add(item); }
         public void RemoveItem(int index) { items.RemoveAt(index); }
         public abstract string GetMachineType();
-        public static Machine operator -(Machine machine, int amount)
-        {
-            foreach (var item in machine.items)
-            {
-                int currentStock = int.Parse(item.Stock);
-
-                if (machine.GetMachineType() == "hot")
-                {
-                    // "hot" 자판기는 재고를 50씩 감소
-                    currentStock -= amount;
-                }
-                else if (machine.GetMachineType() == "cold")
-                {
-                    // "cold" 자판기는 재고를 1씩 감소
-                    currentStock -= 1;
-                }
-
-                if (currentStock < 0)
-                {
-                    currentStock = 0; // 음수 재고는 허용하지 않음
-                }
-
-                item.Stock = currentStock.ToString();
-            }
-
-            return machine;
-        }
+        public abstract void PurchaseItem(int index);
     }
 
     public class HotMachine : Machine     //뜨거운 음료 클래스
@@ -61,6 +35,16 @@ namespace project
         {
             return "hot";
         }
+        public override void PurchaseItem(int index)
+        {
+            if (index > items.Count)
+            {
+                throw new CustomException("물품이 없습니다.");
+            }
+
+            HotItem selectedItem = (HotItem)items[index - 1];
+            selectedItem -= 50;
+        }
     }
 
     public class ColdMachine : Machine        //차가운 음료 클래스
@@ -80,6 +64,16 @@ namespace project
         public override string GetMachineType()
         {
             return "cold";
+        }
+        public override void PurchaseItem(int index)
+        {
+            if (index > items.Count)
+            {
+                throw new CustomException("물품이 없습니다.");
+            }
+
+            ColdItem selectedItem = (ColdItem)items[index - 1];
+            selectedItem -= 1;
         }
     }
 }

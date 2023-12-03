@@ -8,6 +8,7 @@ namespace project
     {
         List<Machine> machines = new List<Machine>();
         Machine selectedMachine = null;
+        Admin admin = new Admin();
 
         public MachineSelect()
         {
@@ -40,55 +41,33 @@ namespace project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtdrinkselect.Text = txtdrink1.Text;
-            txtpriceselect.Text = txtprice1.Text;
+
+            PurchaseItem(1);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            txtdrinkselect.Text = txtdrink2.Text;
-            txtpriceselect.Text = txtprice2.Text;
+            PurchaseItem(2);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            txtdrinkselect.Text = txtdrink3.Text;
-            txtpriceselect.Text = txtprice3.Text;
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            txtdrinkselect.Text = txtdrink4.Text;
-            txtpriceselect.Text = txtprice4.Text;
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            txtdrinkselect.Text = txtdrink5.Text;
-            txtpriceselect.Text = txtprice5.Text;
+            PurchaseItem(3);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            txtdrinkselect.Text = txtdrink6.Text;
-            txtpriceselect.Text = txtprice6.Text;
+            PurchaseItem(4);
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            if (txtpriceselect.Text == "")
-            {
-                MessageBox.Show("선택하실 수 없습니다.");
-            }
-            else
-            {
-                MessageBox.Show("구매완료");
-            }
+            PurchaseItem(5);
+        }
 
-            stockCheck();
-
-            txtpriceselect.Text = "";
-            txtdrinkselect.Text = "";
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PurchaseItem(6);
         }
 
         private void machineListBox_MouseClick(object sender, MouseEventArgs e)
@@ -102,6 +81,8 @@ namespace project
 
         private void Render()       //자판기 text설정
         {
+            int selectedIndex = machineListBox.SelectedIndex;
+
             List<Label> textDrinkList = new List<Label>() { txtdrink1, txtdrink2, txtdrink3, txtdrink4, txtdrink5, txtdrink6 };
             List<Label> textPriceList = new List<Label>() { txtprice1, txtprice2, txtprice3, txtprice4, txtprice5, txtprice6 };
 
@@ -121,35 +102,24 @@ namespace project
                     textPriceList[i].Text = "";
                 }
             }
+
+            FileUtil.StoreMachineStateByIndex(selectedIndex + 1, selectedMachine);
         }
 
-        private void stockCheck()       //재고 감소
+        private void PurchaseItem(int itemIndex)       //재고 감소
         {
-            int selectedIndex = machineListBox.SelectedIndex;
-
-            if (selectedIndex >= 0 && selectedIndex < selectedMachine.items.Count)
+            try
             {
-                Item selectedItem = selectedMachine.items[selectedIndex];
-                int currentStock = Convert.ToInt32(selectedItem.Stock);
-
-                if (currentStock > 0)
-                {
-                    if (currentStock > 50)
-                    {
-                        currentStock -= 50;
-                    }
-                    else
-                    {
-                        currentStock--;
-                    }
-                    selectedItem.Stock = currentStock.ToString();       //변경된 재고 업데이트
-                    FileUtil.StoreMachineStateByIndex(selectedIndex + 1, selectedMachine);      //변경된 상태 저장
-                }
-                else
-                {
-                    MessageBox.Show("재고가 부족합니다.");
-                }
+                selectedMachine.PurchaseItem(itemIndex);
+                MessageBox.Show("구매완료");
+                Render();
             }
+            catch (CustomException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -157,6 +127,13 @@ namespace project
             this.Close();
             MainForm mainForm = new MainForm();
             mainForm.Show();
+        }
+
+        private void MachineSelect_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //MainForm mainForm = new MainForm();
+            //mainForm.Show();
+            Application.Exit();
         }
     }
 }
