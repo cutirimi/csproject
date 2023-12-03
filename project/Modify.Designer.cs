@@ -77,14 +77,14 @@
             this.stocktb.Location = new System.Drawing.Point(96, 121);
             this.stocktb.Name = "stocktb";
             this.stocktb.Size = new System.Drawing.Size(149, 21);
-            this.stocktb.TabIndex = 32;
+            this.stocktb.TabIndex = 3;
             // 
             // pricetb
             // 
             this.pricetb.Location = new System.Drawing.Point(96, 89);
             this.pricetb.Name = "pricetb";
             this.pricetb.Size = new System.Drawing.Size(149, 21);
-            this.pricetb.TabIndex = 31;
+            this.pricetb.TabIndex = 2;
             // 
             // label3
             // 
@@ -102,7 +102,7 @@
             this.deletebtn.Location = new System.Drawing.Point(277, 109);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(114, 32);
-            this.deletebtn.TabIndex = 29;
+            this.deletebtn.TabIndex = 5;
             this.deletebtn.Text = "삭제";
             this.deletebtn.UseVisualStyleBackColor = false;
             this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
@@ -113,7 +113,7 @@
             this.addbtn.Location = new System.Drawing.Point(277, 57);
             this.addbtn.Name = "addbtn";
             this.addbtn.Size = new System.Drawing.Size(114, 32);
-            this.addbtn.TabIndex = 28;
+            this.addbtn.TabIndex = 4;
             this.addbtn.Text = "추가";
             this.addbtn.UseVisualStyleBackColor = false;
             this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
@@ -123,7 +123,7 @@
             this.itemtb.Location = new System.Drawing.Point(96, 57);
             this.itemtb.Name = "itemtb";
             this.itemtb.Size = new System.Drawing.Size(149, 21);
-            this.itemtb.TabIndex = 26;
+            this.itemtb.TabIndex = 1;
             // 
             // machinetypetb
             // 
@@ -170,7 +170,7 @@
             this.movebtn.Location = new System.Drawing.Point(277, 229);
             this.movebtn.Name = "movebtn";
             this.movebtn.Size = new System.Drawing.Size(114, 32);
-            this.movebtn.TabIndex = 38;
+            this.movebtn.TabIndex = 6;
             this.movebtn.Text = "내 페이지";
             this.movebtn.UseVisualStyleBackColor = false;
             this.movebtn.Click += new System.EventHandler(this.movebtn_Click);

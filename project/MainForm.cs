@@ -18,12 +18,10 @@ namespace project
         {
             loginForm.Show();
             this.Hide();
-            // loginForm.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //machineSelect.ShowDialog();
             machineSelect.Show();
             this.Hide();
         }

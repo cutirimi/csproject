@@ -128,12 +128,5 @@ namespace project
             MainForm mainForm = new MainForm();
             mainForm.Show();
         }
-
-        private void MachineSelect_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //MainForm mainForm = new MainForm();
-            //mainForm.Show();
-            Application.Exit();
-        }
     }
 }

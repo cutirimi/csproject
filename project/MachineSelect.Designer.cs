@@ -361,7 +361,6 @@
             this.Controls.Add(this.machineListBox);
             this.Name = "MachineSelect";
             this.Text = "자판기 선택";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MachineSelect_FormClosing);
             this.Load += new System.EventHandler(this.MachineSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
