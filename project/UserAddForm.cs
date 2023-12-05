@@ -41,11 +41,10 @@ namespace project
             string pwcon = pwcontb.Text;
             string machineType = radioButton1.Checked ? "cold" : "hot";
 
-            //password에서 특수문자 $ 사용 불가능 -> $를 구분자로 사용
-            if (password == pwcon)
+            if (password == pwcon)      //비밀번호와 비밀번호가 일치한 경우
             {
-
                 MessageBox.Show("등록이 완료되었습니다.");
+                // Admin.txt파일에 관리자명, 비밀번호를 쓰고, MachineState.txt파일에 자판기타입을 쓴다.
                 FileUtil.signup(name, password, machineType);
                 this.Hide();
             }

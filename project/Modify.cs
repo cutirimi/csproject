@@ -34,6 +34,7 @@ namespace project
             {
                 machinetypetb.Text = "차가운 음료 자판기";
             }
+
             ClearForm();
             RenderDrinkList();
 
@@ -53,6 +54,7 @@ namespace project
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
+            // listView의 선택된 아이템의 인덱스를 매개변수로 Admin 클래스의 RemoveItem 메소드를 호출
             admin.RemoveItem(drinklist.SelectedItems[0].Index);
             RenderDrinkList();
 
@@ -63,7 +65,6 @@ namespace project
             else
             {
                 addbtn.Enabled = false;
-
             }
         }
 
@@ -103,7 +104,7 @@ namespace project
                     addbtn.Enabled = false;
                 }
             }
-            catch (CustomException ex)
+            catch (CustomException ex)      //예외처리
             {
                 MessageBox.Show(ex.Message);
             }
@@ -112,8 +113,10 @@ namespace project
         public void RenderDrinkList()
         {
             drinklist.Items.Clear();
-            List<Item> itemList = admin.GetItemList();
+            // Admin클래스의 인스턴스를 통해 로그인된 관리자의 음료품목들을 들고옴
+            List<Item> itemList = admin.GetItemList();      //컬렉션
 
+            // 음료품목을 음료품목리스트에 들어가있는 만큼 반복하는 foreach문
             foreach (Item item in itemList)
             {
                 ListViewItem lvi = new ListViewItem(item.DrinkName);
@@ -121,7 +124,7 @@ namespace project
                 lvi.SubItems.Add(item.Stock);
                 drinklist.Items.Add(lvi);
             }
-            drinklist.EndUpdate();
+            drinklist.EndUpdate();      //ListView에 업데이트
         }
     }
 }

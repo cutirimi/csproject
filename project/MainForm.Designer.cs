@@ -53,10 +53,10 @@
             this.label2.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(29, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(352, 150);
+            this.label2.Size = new System.Drawing.Size(352, 165);
             this.label2.TabIndex = 21;
-            this.label2.Text = "자판기를 관리할 수 있도록 제작된 프로그램입니다.\r\n\r\n\r\n>> 주요 기능\r\n\r\n1. 가상 자판기\r\n\r\n2. 로그인 및 사용자 등록\r\n\r\n3. 품" +
-    "목과 누적액 확인";
+            this.label2.Text = "자판기를 관리할 수 있도록 제작된 프로그램입니다.\r\n\r\n\r\n>> 주요 기능\r\n1. 로그인 및 관리자 등록\r\n\r\n2. 음료품목 추가, 삭제\r\n\r\n3" +
+    ". 개인 페이지에서 자판기 상태 확인\r\n\r\n4. 가상 자판기로 동작 확인";
             // 
             // label3
             // 
@@ -112,6 +112,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "자판기 프로그램";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
